@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks;   
 
 namespace Datos
 {
@@ -83,7 +83,7 @@ namespace Datos
         public void Insertar(string nombre, string desc, string marca, double precio, int stock)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into Productos values (@nombre,@descrip,@marca,@precio,@stock)";            
+            comando.CommandText = "insert into Productos values (@nombre,@descrip,@marca,@precio,@stock);";            
             comando.Parameters.AddWithValue("@nombre", nombre);
             comando.Parameters.AddWithValue("@descrip", desc);
             comando.Parameters.AddWithValue("@Marca", marca);

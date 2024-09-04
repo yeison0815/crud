@@ -12,7 +12,7 @@ namespace Datos
     {
 
 
-        private SqlConnection dbConexion = new SqlConnection("Server=SANFRANCISCO\\SQLEXPRESS;DataBase=inventario;Integrated Security=true");
+        private SqlConnection dbConexion = new SqlConnection("Server=LEZCANO\\SQLEXPRESS;DataBase=inventario;Integrated Security=true");
         public SqlConnection AbrirConexion()
         {
             if (dbConexion.State == ConnectionState.Closed)
