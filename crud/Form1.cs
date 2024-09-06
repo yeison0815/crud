@@ -73,12 +73,12 @@ namespace crud
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 Editar = true;
-                txtNombre.Text = dataGridView1.CurrentRow.Cells["Nombre"].Value.ToString();
+                txtNombre.Text = dataGridView1.CurrentRow.Cells["NombreProducto"].Value.ToString();
                 txtMarca.Text = dataGridView1.CurrentRow.Cells["Marca"].Value.ToString();
                 txtDesc.Text = dataGridView1.CurrentRow.Cells["Descripcion"].Value.ToString();
                 txtPrecio.Text = dataGridView1.CurrentRow.Cells["Precio"].Value.ToString();
                 txtStock.Text = dataGridView1.CurrentRow.Cells["Stock"].Value.ToString();
-                idProducto = dataGridView1.CurrentRow.Cells["Id"].Value.ToString();
+                idProducto = dataGridView1.CurrentRow.Cells["IdProducto"].Value.ToString();
             }
             else
                 MessageBox.Show("seleccione una fila por favor");
@@ -88,7 +88,7 @@ namespace crud
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                idProducto = dataGridView1.CurrentRow.Cells["Id"].Value.ToString();
+                idProducto = dataGridView1.CurrentRow.Cells["IdProducto"].Value.ToString();
                 Producto.EliminarPRod(idProducto);
                 MessageBox.Show("Eliminado correctamente");
                 MostrarProductos();

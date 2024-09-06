@@ -32,7 +32,7 @@ namespace Datos
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from Productos";            
+            comando.CommandText = "select * from Producto";            
             buffer = comando.ExecuteReader();
             tabla.Load(buffer);
             conexion.CerrarConexion();
@@ -43,21 +43,21 @@ namespace Datos
         public Int32 contarProductos()
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select count(*) as cuenta from Productos";           
+            comando.CommandText = "select count(*) as cuenta from Producto";           
             Int32 cont = (Int32) comando.ExecuteScalar();
             conexion.CerrarConexion();
             return cont;
         }
 
-        public string getNombre(int id)
+        public string getNombre(int IdProducto)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select Nombre from Productos where Id = @id";
-            comando.Parameters.AddWithValue("@id", id);
+            comando.CommandText = "select NombreProducto from Producto where IdProducto = @id";
+            comando.Parameters.AddWithValue("@id", IdProducto);
             SqlDataReader data = comando.ExecuteReader();
             string nombre;
             if (data.Read())
-                nombre = data["Nombre"].ToString();
+                nombre = data["NombreProducto"].ToString();
             else
                 nombre = "No encontrado";
             
@@ -68,7 +68,7 @@ namespace Datos
         public void Insertar_SP(string nombre, string desc, string marca, double precio, int stock)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "InsetarProductos";
+            comando.CommandText = "InsetarProducto";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@nombre", nombre);
             comando.Parameters.AddWithValue("@descrip", desc);
@@ -83,7 +83,7 @@ namespace Datos
         public void Insertar(string nombre, string desc, string marca, double precio, int stock)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into Productos values (@nombre,@descrip,@marca,@precio,@stock);";            
+            comando.CommandText = "insert into Producto (NombreProducto, Descripcion, Marca, Precio, Stock) values (@nombre,@descrip,@Marca,@precio,@stock);";            
             comando.Parameters.AddWithValue("@nombre", nombre);
             comando.Parameters.AddWithValue("@descrip", desc);
             comando.Parameters.AddWithValue("@Marca", marca);
@@ -112,7 +112,7 @@ namespace Datos
         public void Editar(string nombre, string desc, string marca, double precio, int stock, int id)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "update Productos set Nombre=@nombre, Descripcion=@descrip, Marca=@marca, Precio=@precio, Stock=@stock where Id=@id";
+            comando.CommandText = "update Producto set NombreProducto=@nombre, Descripcion=@descrip, Marca=@marca, Precio=@precio, Stock=@stock where IdProducto=@id";
             comando.CommandType = CommandType.Text;
             comando.Parameters.AddWithValue("@nombre", nombre);
             comando.Parameters.AddWithValue("@descrip", desc);
@@ -138,7 +138,7 @@ namespace Datos
         public void Eliminar(int idpro)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "delete from Productos where Id=@idpro";
+            comando.CommandText = "delete from Producto where IdProducto=@idpro";
             comando.CommandType = CommandType.Text;
             comando.Parameters.AddWithValue("@idpro", idpro);
             comando.ExecuteNonQuery();
