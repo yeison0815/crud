@@ -97,20 +97,7 @@ namespace crud
                 MessageBox.Show("seleccione una fila por favor");
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -121,5 +108,7 @@ namespace crud
         {
             txtResult.Text = Convert.ToString(Producto.Contar());
         }
+
+
     }
 }
