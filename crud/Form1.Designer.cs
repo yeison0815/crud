@@ -62,7 +62,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(238, 0);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1180, 341);
+            dataGridView1.Size = new Size(960, 341);
             dataGridView1.TabIndex = 10;
             // 
             // button2
@@ -271,7 +271,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1418, 500);
+            ClientSize = new Size(1198, 500);
             Controls.Add(groupBox1);
             Controls.Add(button3);
             Controls.Add(button2);

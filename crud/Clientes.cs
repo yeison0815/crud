@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class UsuariosPRIN : Form
+    public partial class Clientes : Form
     {
-        private static UsuariosPRIN instancia = null;
-        public static UsuariosPRIN usuario_unico()
+        private static Clientes instancia = null;
+        public static Clientes clientes_unico()
         {
 
             if (instancia == null)
             {
-                instancia = new UsuariosPRIN();
+                instancia = new Clientes();
 
-                return instancia;
+                return instancia;   
             }
             return instancia;
         }
-        public UsuariosPRIN()
+        public Clientes()
         {
             InitializeComponent();
         }

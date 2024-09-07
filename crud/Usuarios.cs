@@ -19,14 +19,18 @@ namespace Presentacion
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClientecLcs frm = new ClientecLcs();
+            Clientes frm = Clientes.clientes_unico();
+            frm.MdiParent = this;
             frm.Show();
+            frm.BringToFront();
         }
 
         private void usuariosPrincipalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UsuariosPRIN frm = new UsuariosPRIN();  
+            UsuariosPRIN frm = UsuariosPRIN.usuario_unico();
+            frm.MdiParent = this;
             frm.Show();
+            frm.BringToFront();
         }
     }
 }

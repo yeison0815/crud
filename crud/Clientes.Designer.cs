@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class ClientecLcs
+    partial class Clientes
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1119, 587);
+            ClientSize = new Size(394, 267);
             Name = "ClientecLcs";
             Text = "ClientescLcs";
             ResumeLayout(false);
