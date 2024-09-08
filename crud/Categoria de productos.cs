@@ -30,9 +30,6 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        private void Categoria_de_productos_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

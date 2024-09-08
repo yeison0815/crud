@@ -5,7 +5,18 @@ namespace crud
 {
     public partial class frmMain : Form
     {
+        private static frmMain instancia = null;
+        public static frmMain producto_unico()
+        {
 
+            if (instancia == null)
+            {
+                instancia = new frmMain();
+
+                return instancia;
+            }
+            return instancia;
+        }
 
         private conProducto Producto = new conProducto();
         private string idProducto = null;
