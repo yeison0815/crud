@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conCategorias.cs" />
+    <Compile Include="conMediopago.cs" />
     <Compile Include="conProducto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

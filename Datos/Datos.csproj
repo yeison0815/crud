@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="modCategorias.cs" />
+    <Compile Include="modMediopago.cs" />
     <Compile Include="modProductos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
