@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    internal class conCategorias
+    public class conCategorias
     {
 
         private modCategorias Categorias = new modCategorias();

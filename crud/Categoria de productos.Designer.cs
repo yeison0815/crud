@@ -55,6 +55,7 @@
             guaradarcategoria.TabIndex = 1;
             guaradarcategoria.Text = "Guardar";
             guaradarcategoria.UseVisualStyleBackColor = true;
+            guaradarcategoria.Click += guaradarcategoria_Click;
             // 
             // editatcategoria
             // 

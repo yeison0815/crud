@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,11 +26,63 @@ namespace Presentacion
             }
             return instancia;
         }
+
+        private conCategorias Categorias = new conCategorias();
+        private string idCategoria = null;
+        private bool Editar = false;
+
+        private void Categoria_load(object sender, EventArgs e)
+        {
+            MostrarCategorias();
+        }
+
+        private void MostrarCategorias()
+        {
+            conCategorias objeto = new conCategorias();
+            dataGridView_categoria.DataSource = objeto.MostrarCRod();
+        }
         public Categoria_de_productos()
         {
             InitializeComponent();
         }
 
+        private void guaradarcategoria_Click(object sender, EventArgs e)
+        {
+            //INSERTAR
+            if (Editar == false)
+            {
+                try
+                {
+                    Categorias.InsertarCRod(Ncategoria.Text, Dcategoria.Text);
+                    MessageBox.Show("se inserto correctamente");
+                    MostrarCategorias();
+                    limpiarForm();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                }
+            }
+            //EDITAR
+            if (Editar == true)
+            {
+                try
+                {
+                    Categorias.EditarCRod(Ncategoria.Text,Dcategoria.Text);
+                    MessageBox.Show("se edito correctamente");
+                    MostrarCategorias();
+                    limpiarForm();
+                    Editar = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("no se pudo editar los datos por: " + ex);
+                }
+            }
+        }
+        private void limpiarForm()
+        {
 
+        }
     }
 }
