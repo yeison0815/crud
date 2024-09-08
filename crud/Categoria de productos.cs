@@ -93,6 +93,7 @@ namespace Presentacion
                 Editar = true;
                 Ncategoria.Text = dataGridView_categoria.CurrentRow.Cells["NombreCategoria"].Value.ToString();
                 Dcategoria.Text = dataGridView_categoria.CurrentRow.Cells["Descripcion"].Value.ToString();
+                idCategoria = dataGridView_categoria.CurrentRow.Cells["IdCategoria"].Value.ToString();
             }
             else
                 MessageBox.Show("seleccione una fila por favor");
