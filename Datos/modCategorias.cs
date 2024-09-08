@@ -62,7 +62,7 @@ namespace Datos
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsetarCategoria";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
+            comando.Parameters.AddWithValue("@NombreCat", nombreCategoria);
             comando.Parameters.AddWithValue("@descripCategoria", descripC);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
@@ -72,8 +72,8 @@ namespace Datos
         public void InsertarC(string nombreCategoria, string descripC)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into CategoriaProducto (NombreCategoria, Descripcion) values (@nombreCategoria,@descripCategoria);";
-            comando.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
+            comando.CommandText = "insert into CategoriaProducto (NombreCategoria, Descripcion) values (@NombreCat,@descripCategoria);";
+            comando.Parameters.AddWithValue("@NombreCat", nombreCategoria);
             comando.Parameters.AddWithValue("@descripCategoria", descripC);
 
             comando.ExecuteNonQuery();
@@ -85,7 +85,7 @@ namespace Datos
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EditarCategoria";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
+            comando.Parameters.AddWithValue("@NombreCat", nombreCategoria);
             comando.Parameters.AddWithValue("@descripCategoria", descripC);
             comando.Parameters.AddWithValue("@idC", idCategoria);
             comando.ExecuteNonQuery();
@@ -96,9 +96,9 @@ namespace Datos
         public void EditarC(string nombreCategoria, string descripC,int idCategoria)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "update CategoriaProducto set NombreCategoria=@nombreCategoria, Descripcion=@descripCategoria where IdCategoria=@idC";
+            comando.CommandText = "update CategoriaProducto set NombreCategoria=@NombreCat, Descripcion=@descripCategoria where IdCategoria=@idC";
             comando.CommandType = CommandType.Text;
-            comando.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
+            comando.Parameters.AddWithValue("@NombreCat", nombreCategoria);
             comando.Parameters.AddWithValue("@descripCategoria", descripC);
             comando.Parameters.AddWithValue("@idC", idCategoria);
             comando.ExecuteNonQuery();
