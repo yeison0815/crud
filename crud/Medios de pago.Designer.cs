@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dataGridView_Mediopago = new DataGridView();
             label1 = new Label();
             label2 = new Label();
             Nmediopago = new TextBox();
             Dmediopago = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            GuardarMedios = new Button();
+            EditarMedios = new Button();
+            BorrarMedios = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_Mediopago).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView_Mediopago
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(850, 242);
-            dataGridView1.TabIndex = 0;
+            dataGridView_Mediopago.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_Mediopago.Location = new Point(12, 12);
+            dataGridView_Mediopago.Name = "dataGridView_Mediopago";
+            dataGridView_Mediopago.Size = new Size(850, 242);
+            dataGridView_Mediopago.TabIndex = 0;
             // 
             // label1
             // 
@@ -78,30 +81,65 @@
             Dmediopago.Size = new Size(215, 23);
             Dmediopago.TabIndex = 4;
             // 
+            // GuardarMedios
+            // 
+            GuardarMedios.Location = new Point(251, 291);
+            GuardarMedios.Name = "GuardarMedios";
+            GuardarMedios.Size = new Size(79, 32);
+            GuardarMedios.TabIndex = 5;
+            GuardarMedios.Text = "Guardar";
+            GuardarMedios.UseVisualStyleBackColor = true;
+            GuardarMedios.Click += GuardarMedios_Click;
+            // 
+            // EditarMedios
+            // 
+            EditarMedios.Location = new Point(251, 338);
+            EditarMedios.Name = "EditarMedios";
+            EditarMedios.Size = new Size(79, 32);
+            EditarMedios.TabIndex = 6;
+            EditarMedios.Text = "Editar";
+            EditarMedios.UseVisualStyleBackColor = true;
+            EditarMedios.Click += EditarMedios_Click;
+            // 
+            // BorrarMedios
+            // 
+            BorrarMedios.Location = new Point(336, 316);
+            BorrarMedios.Name = "BorrarMedios";
+            BorrarMedios.Size = new Size(79, 32);
+            BorrarMedios.TabIndex = 7;
+            BorrarMedios.Text = "Borrar";
+            BorrarMedios.UseVisualStyleBackColor = true;
+            BorrarMedios.Click += BorrarMedios_Click;
+            // 
             // Medios_de_pago
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(874, 407);
+            Controls.Add(BorrarMedios);
+            Controls.Add(EditarMedios);
+            Controls.Add(GuardarMedios);
             Controls.Add(Dmediopago);
             Controls.Add(Nmediopago);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridView_Mediopago);
             Name = "Medios_de_pago";
             Text = "Medios_de_pago";
-            Load += Medios_de_pago_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_Mediopago).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView_Mediopago;
         private Label label1;
         private Label label2;
         private TextBox Nmediopago;
         private TextBox Dmediopago;
+        private Button GuardarMedios;
+        private Button EditarMedios;
+        private Button BorrarMedios;
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Negocios
 {
-    internal class conMediopago
+    public class conMediopago
     {
 
         private modMediopago Pago = new modMediopago();

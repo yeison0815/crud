@@ -101,7 +101,7 @@ namespace Presentacion
 
         private void borrarcategoria_Click(object sender, EventArgs e)
         {
-            if(dataGridView_categoria.SelectedRows.Count > 0)
+            if (dataGridView_categoria.SelectedRows.Count > 0)
             {
                 idCategoria = dataGridView_categoria.CurrentRow.Cells["idCategoria"].Value.ToString();
                 Categorias.EliminarCRod(idCategoria);
@@ -110,6 +110,11 @@ namespace Presentacion
             }
             else
                 MessageBox.Show("seleccione una fila por favor");
+        }
+
+        private void Categoria_de_productos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

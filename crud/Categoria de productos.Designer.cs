@@ -126,6 +126,7 @@
             Controls.Add(dataGridView_categoria);
             Name = "Categoria_de_productos";
             Text = "Categoria_de_productos";
+            Load += Categoria_de_productos_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView_categoria).EndInit();
             ResumeLayout(false);
             PerformLayout();
