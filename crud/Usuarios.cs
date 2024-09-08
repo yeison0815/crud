@@ -12,6 +12,7 @@ namespace Presentacion
 {
     public partial class Usuarios : Form
     {
+
         public Usuarios()
         {
             InitializeComponent();
@@ -28,6 +29,22 @@ namespace Presentacion
         private void usuariosPrincipalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UsuariosPRIN frm = UsuariosPRIN.usuario_unico();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.BringToFront();
+        }
+
+        private void categoriasDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Categoria_de_productos frm = Categoria_de_productos.categoriaPRO_unico();
+            frm.MdiParent = this;
+            frm.Show();
+            frm.BringToFront();
+        }
+
+        private void mediosDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Medios_de_pago frm = Medios_de_pago.medioPAGO_unico();
             frm.MdiParent = this;
             frm.Show();
             frm.BringToFront();

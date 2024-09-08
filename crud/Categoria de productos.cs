@@ -10,26 +10,27 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class Clientes : Form
+    public partial class Categoria_de_productos : Form
     {
-        private static Clientes instancia = null;
-        public static Clientes clientes_unico()
+
+        private static Categoria_de_productos instancia = null;
+        public static Categoria_de_productos categoriaPRO_unico()
         {
 
             if (instancia == null)
             {
-                instancia = new Clientes();
+                instancia = new Categoria_de_productos();
 
                 return instancia;
             }
             return instancia;
         }
-        public Clientes()
+        public Categoria_de_productos()
         {
             InitializeComponent();
         }
 
-        private void Clientes_Load(object sender, EventArgs e)
+        private void Categoria_de_productos_Load(object sender, EventArgs e)
         {
 
         }

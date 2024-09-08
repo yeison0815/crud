@@ -1,9 +1,12 @@
 using Negocios;
+using Presentacion;
 
 namespace crud
 {
     public partial class frmMain : Form
     {
+
+
         private conProducto Producto = new conProducto();
         private string idProducto = null;
         private bool Editar = false;

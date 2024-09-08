@@ -10,26 +10,26 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class Clientes : Form
+    public partial class Medios_de_pago : Form
     {
-        private static Clientes instancia = null;
-        public static Clientes clientes_unico()
+        private static Medios_de_pago instancia = null;
+        public static Medios_de_pago medioPAGO_unico()
         {
 
             if (instancia == null)
             {
-                instancia = new Clientes();
+                instancia = new Medios_de_pago();
 
                 return instancia;
             }
             return instancia;
         }
-        public Clientes()
+        public Medios_de_pago()
         {
             InitializeComponent();
         }
 
-        private void Clientes_Load(object sender, EventArgs e)
+        private void Medios_de_pago_Load(object sender, EventArgs e)
         {
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class Clientes
+    partial class Medios_de_pago
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             SuspendLayout();
             // 
-            // Clientes
+            // Medios_de_pago
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(394, 267);
-            Name = "Clientes";
-            Text = "ClientescLcs";
-            Load += Clientes_Load;
+            ClientSize = new Size(800, 450);
+            Name = "Medios_de_pago";
+            Text = "Medios_de_pago";
+            Load += Medios_de_pago_Load;
             ResumeLayout(false);
         }
 

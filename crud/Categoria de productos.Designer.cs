@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class Clientes
+    partial class Categoria_de_productos
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             SuspendLayout();
             // 
-            // Clientes
+            // Categoria_de_productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(394, 267);
-            Name = "Clientes";
-            Text = "ClientescLcs";
-            Load += Clientes_Load;
+            ClientSize = new Size(800, 450);
+            Name = "Categoria_de_productos";
+            Text = "Categoria_de_productos";
+            Load += Categoria_de_productos_Load;
             ResumeLayout(false);
         }
 
