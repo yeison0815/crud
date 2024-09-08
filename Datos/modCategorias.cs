@@ -28,7 +28,7 @@ namespace Datos
             return tabla;
 
         }
-        public DataTable Mostrar()
+        public DataTable MostrarC()
         {
 
             comando.Connection = conexion.AbrirConexion();
@@ -69,7 +69,7 @@ namespace Datos
             conexion.CerrarConexion();
         }
 
-        public void Insertar(string nombreCategoria, string descripC)
+        public void InsertarC(string nombreCategoria, string descripC)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "insert into CategoriaProducto (NombreCategoria, Descripcion) values (@nombreCategoria,@descripCategoria);";
@@ -93,7 +93,7 @@ namespace Datos
             conexion.CerrarConexion();
         }
 
-        public void Editar(string nombreCategoria, string descripC,int idCategoria)
+        public void EditarC(string nombreCategoria, string descripC,int idCategoria)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "update CategoriaProducto set NombreCategoria=@nombreCategoria, Descripcion=@descripCategoria where IdCategoria=@idC";
@@ -116,7 +116,7 @@ namespace Datos
             conexion.CerrarConexion();
         }
 
-        public void Eliminar(int idCategoria)
+        public void EliminarC(int idCategoria)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "delete from CategoriaProducto where IdCategoria=@idCat";
