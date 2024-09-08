@@ -32,7 +32,7 @@ namespace Datos
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from CategoriaProductos";
+            comando.CommandText = "select * from CategoriaProducto";
             buffer = comando.ExecuteReader();
             tabla.Load(buffer);
             conexion.CerrarConexion();
@@ -87,7 +87,7 @@ namespace Datos
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
             comando.Parameters.AddWithValue("@descripCategoria", descripC);
-            comando.Parameters.AddWithValue("@idCategoria", idCategoria);
+            comando.Parameters.AddWithValue("@idC", idCategoria);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
@@ -99,7 +99,7 @@ namespace Datos
             comando.CommandText = "update CategoriaProducto set NombreCategoria=@nombreCategoria, Descripcion=@descripCategoria where IdCategoria=@idC";
             comando.CommandType = CommandType.Text;
             comando.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
-            comando.Parameters.AddWithValue("@descripC", descripC);
+            comando.Parameters.AddWithValue("@descripCategoria", descripC);
             comando.Parameters.AddWithValue("@idC", idCategoria);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();

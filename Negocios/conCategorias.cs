@@ -26,9 +26,9 @@ namespace Negocios
         {
             Categorias.EditarC(nombreC, descC, Convert.ToInt32(idC));
         }
-        public void EliminarCRod(string id)
+        public void EliminarCRod(string idc)
         {
-            Categorias.EliminarC(Convert.ToInt32(id));
+            Categorias.EliminarC(Convert.ToInt32(idc));
         }
 
         public string getNombreCategorias(int idC)

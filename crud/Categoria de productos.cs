@@ -68,7 +68,7 @@ namespace Presentacion
             {
                 try
                 {
-                    Categorias.EditarCRod(Ncategoria.Text,Dcategoria.Text);
+                    Categorias.EditarCRod(Ncategoria.Text, Dcategoria.Text, idCategoria);
                     MessageBox.Show("se edito correctamente");
                     MostrarCategorias();
                     limpiarForm();
@@ -82,7 +82,33 @@ namespace Presentacion
         }
         private void limpiarForm()
         {
+            Ncategoria.Clear();
+            Dcategoria.Clear();
+        }
 
+        private void editatcategoria_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_categoria.SelectedRows.Count > 0)
+            {
+                Editar = true;
+                Ncategoria.Text = dataGridView_categoria.CurrentRow.Cells["NombreCategoria"].Value.ToString();
+                Dcategoria.Text = dataGridView_categoria.CurrentRow.Cells["Descripcion"].Value.ToString();
+            }
+            else
+                MessageBox.Show("seleccione una fila por favor");
+        }
+
+        private void borrarcategoria_Click(object sender, EventArgs e)
+        {
+            if(dataGridView_categoria.SelectedRows.Count > 0)
+            {
+                idCategoria = dataGridView_categoria.CurrentRow.Cells["idCategoria"].Value.ToString();
+                Categorias.EliminarCRod(idCategoria);
+                MessageBox.Show("Eliminado correctamente");
+                MostrarCategorias();
+            }
+            else
+                MessageBox.Show("seleccione una fila por favor");
         }
     }
 }

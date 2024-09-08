@@ -65,6 +65,7 @@
             editatcategoria.TabIndex = 2;
             editatcategoria.Text = "Editar";
             editatcategoria.UseVisualStyleBackColor = true;
+            editatcategoria.Click += editatcategoria_Click;
             // 
             // borrarcategoria
             // 
@@ -74,6 +75,7 @@
             borrarcategoria.TabIndex = 3;
             borrarcategoria.Text = "Borrar";
             borrarcategoria.UseVisualStyleBackColor = true;
+            borrarcategoria.Click += borrarcategoria_Click;
             // 
             // Ncategoria
             // 

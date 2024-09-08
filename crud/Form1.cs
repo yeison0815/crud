@@ -111,8 +111,6 @@ namespace crud
                 MessageBox.Show("seleccione una fila por favor");
         }
 
-
-
         private void button5_Click(object sender, EventArgs e)
         {
             txtResult.Text = Producto.getNombre((int)numericUpDown1.Value);
