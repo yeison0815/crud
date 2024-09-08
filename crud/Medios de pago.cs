@@ -93,7 +93,7 @@ namespace Presentacion
                 Editar = true;
                 Nmediopago.Text = dataGridView_Mediopago.CurrentRow.Cells["NombreMediopago"].Value.ToString();
                 Dmediopago.Text = dataGridView_Mediopago.CurrentRow.Cells["Descripcion"].Value.ToString();
-                idMediopago = dataGridView_Mediopago.CurrentRow.Cells["IdMediopago"].Value.ToString();
+                idMediopago = dataGridView_Mediopago.CurrentRow.Cells["IdMedioPago"].Value.ToString();
             }
             else
                 MessageBox.Show("seleccione una fila por favor");
@@ -103,7 +103,7 @@ namespace Presentacion
         {
             if (dataGridView_Mediopago.SelectedRows.Count > 0)
             {
-                idMediopago = dataGridView_Mediopago.CurrentRow.Cells["idCategoria"].Value.ToString();
+                idMediopago = dataGridView_Mediopago.CurrentRow.Cells["IdMediopago"].Value.ToString();
                 Mediopago.EliminarMRod(idMediopago);
                 MessageBox.Show("Eliminado correctamente");
                 MostrarMediopago();
