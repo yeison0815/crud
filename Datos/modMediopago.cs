@@ -41,15 +41,15 @@ namespace Datos
         }
 
 
-        public string getNombreMediopago(int IdCategoria)
+        public string getNombreMediopago(int IdMediopago)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select NombreCategoria from CategoriaProducto where IdCategoria = @idC";
-            comando.Parameters.AddWithValue("@idC", IdCategoria);
+            comando.CommandText = "select NombreMediopago from Mediopago where IdMediopago = @idM";
+            comando.Parameters.AddWithValue("@idM", IdMediopago);
             SqlDataReader data = comando.ExecuteReader();
             string nombre;
             if (data.Read())
-                nombre = data["NombreCategoria"].ToString();
+                nombre = data["NombreMediopago"].ToString();
             else
                 nombre = "No encontrado";
 
@@ -57,71 +57,71 @@ namespace Datos
             conexion.CerrarConexion();
             return (nombre);
         }
-        public void Insertar_SC(string nombreCategoria, string descripC)
+        public void Insertar_SM(string nombreMediopago, string descripM)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "InsetarCategoria";
+            comando.CommandText = "InsetarMediopago";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
-            comando.Parameters.AddWithValue("@descripCategoria", descripC);
+            comando.Parameters.AddWithValue("@NombreMed", nombreMediopago);
+            comando.Parameters.AddWithValue("@descripMediopago", descripM);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void InsertarC(string nombreCategoria, string descripC)
+        public void InsertarM(string nombreMediopago, string descripM)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into CategoriaProducto (NombreCategoria, Descripcion) values (@nombreCategoria,@descripCategoria);";
-            comando.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
-            comando.Parameters.AddWithValue("@descripCategoria", descripC);
+            comando.CommandText = "insert into Mediopago (NombreMediopago, Descripcion) values (@NombreMed,@descripMediopago);";
+            comando.Parameters.AddWithValue("@NombreMed", nombreMediopago);
+            comando.Parameters.AddWithValue("@descripMediopago", descripM);
 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public void Editar_SC(string nombreCategoria, string descripC, int idCategoria)
+        public void Editar_SM(string nombreMediopago, string descripM, int idMediopago)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EditarCategoria";
+            comando.CommandText = "EditarMediopago";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
-            comando.Parameters.AddWithValue("@descripCategoria", descripC);
-            comando.Parameters.AddWithValue("@idC", idCategoria);
+            comando.Parameters.AddWithValue("@NombreMed", nombreMediopago);
+            comando.Parameters.AddWithValue("@descripMediopago", descripM);
+            comando.Parameters.AddWithValue("@idM", idMediopago);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void EditarC(string nombreCategoria, string descripC, int idCategoria)
+        public void EditarM(string nombreMediopago, string descripM, int idMediopago)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "update CategoriaProducto set NombreCategoria=@nombreCategoria, Descripcion=@descripCategoria where IdCategoria=@idC";
+            comando.CommandText = "update Mediopago set NombreMediopago=@NombreMed, Descripcion=@descripMediopago where IdMediopago=@idM";
             comando.CommandType = CommandType.Text;
-            comando.Parameters.AddWithValue("@nombreCategoria", nombreCategoria);
-            comando.Parameters.AddWithValue("@descripCategoria", descripC);
-            comando.Parameters.AddWithValue("@idC", idCategoria);
+            comando.Parameters.AddWithValue("@NombreMed", nombreMediopago);
+            comando.Parameters.AddWithValue("@descripMediopago", descripM);
+            comando.Parameters.AddWithValue("@idM", idMediopago);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public void Eliminar_SC(int idCategoria)
+        public void Eliminar_SM(int idMediopago)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EliminarCategoria";
+            comando.CommandText = "EliminarMediopago";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idC", idCategoria);
+            comando.Parameters.AddWithValue("@idM", idMediopago);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void EliminarC(int idCategoria)
+        public void EliminarM(int idMediopago)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "delete from CategoriaProducto where IdCategoria=@idCat";
+            comando.CommandText = "delete from Mediopago where IdMediopago=@idMed";
             comando.CommandType = CommandType.Text;
-            comando.Parameters.AddWithValue("@idCat", idCategoria);
+            comando.Parameters.AddWithValue("@idMed", idMediopago);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
