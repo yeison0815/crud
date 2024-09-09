@@ -57,49 +57,49 @@ namespace Datos
             conexion.CerrarConexion();
             return (nombre);
         }
-        public void Insertar_SM(string nombreMediopago, string descripM)
+        public void Insertar_SM(string nombreMediopago, string valorM)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsetarMediopago";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@NombreMed", nombreMediopago);
-            comando.Parameters.AddWithValue("@descripMediopago", descripM);
+            comando.Parameters.AddWithValue("@valorMediopago", valorM);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void InsertarM(string nombreMediopago, string descripM)
+        public void InsertarM(string nombreMediopago, string valorM)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into Mediopago (NombreMediopago, Descripcion) values (@NombreMed,@descripMediopago);";
+            comando.CommandText = "insert into Mediopago (NombreMediopago, Valor) values (@NombreMed,@valorMediopago);";
             comando.Parameters.AddWithValue("@NombreMed", nombreMediopago);
-            comando.Parameters.AddWithValue("@descripMediopago", descripM);
+            comando.Parameters.AddWithValue("@valorMediopago", valorM);
 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public void Editar_SM(string nombreMediopago, string descripM, int idMediopago)
+        public void Editar_SM(string nombreMediopago, string valorM, int idMediopago)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EditarMediopago";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@NombreMed", nombreMediopago);
-            comando.Parameters.AddWithValue("@descripMediopago", descripM);
+            comando.Parameters.AddWithValue("@valorMediopago", valorM);
             comando.Parameters.AddWithValue("@idM", idMediopago);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void EditarM(string nombreMediopago, string descripM, int idMediopago)
+        public void EditarM(string nombreMediopago, string valorM, int idMediopago)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "update Mediopago set NombreMediopago=@NombreMed, Descripcion=@descripMediopago where IdMediopago=@idM";
+            comando.CommandText = "update Mediopago set NombreMediopago=@NombreMed, Valor=@valorMediopago where IdMediopago=@idM";
             comando.CommandType = CommandType.Text;
             comando.Parameters.AddWithValue("@NombreMed", nombreMediopago);
-            comando.Parameters.AddWithValue("@descripMediopago", descripM);
+            comando.Parameters.AddWithValue("@valorMediopago", valorM);
             comando.Parameters.AddWithValue("@idM", idMediopago);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();

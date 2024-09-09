@@ -31,11 +31,11 @@
             dataGridView_Mediopago = new DataGridView();
             label1 = new Label();
             label2 = new Label();
-            Nmediopago = new TextBox();
-            Dmediopago = new TextBox();
+            Vmediopago = new TextBox();
             GuardarMedios = new Button();
             EditarMedios = new Button();
             BorrarMedios = new Button();
+            Nmediopago = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Mediopago).BeginInit();
             SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             dataGridView_Mediopago.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_Mediopago.Location = new Point(12, 12);
             dataGridView_Mediopago.Name = "dataGridView_Mediopago";
-            dataGridView_Mediopago.Size = new Size(850, 242);
+            dataGridView_Mediopago.Size = new Size(403, 242);
             dataGridView_Mediopago.TabIndex = 0;
             // 
             // label1
@@ -53,9 +53,9 @@
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(12, 267);
             label1.Name = "label1";
-            label1.Size = new Size(215, 21);
+            label1.Size = new Size(129, 21);
             label1.TabIndex = 1;
-            label1.Text = "Nombre de Medio de pago";
+            label1.Text = "Medio de pago:";
             // 
             // label2
             // 
@@ -63,23 +63,16 @@
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(12, 320);
             label2.Name = "label2";
-            label2.Size = new Size(100, 21);
+            label2.Size = new Size(55, 21);
             label2.TabIndex = 2;
-            label2.Text = "Descripción";
+            label2.Text = "Valor:";
             // 
-            // Nmediopago
+            // Vmediopago
             // 
-            Nmediopago.Location = new Point(12, 291);
-            Nmediopago.Name = "Nmediopago";
-            Nmediopago.Size = new Size(215, 23);
-            Nmediopago.TabIndex = 3;
-            // 
-            // Dmediopago
-            // 
-            Dmediopago.Location = new Point(12, 344);
-            Dmediopago.Name = "Dmediopago";
-            Dmediopago.Size = new Size(215, 23);
-            Dmediopago.TabIndex = 4;
+            Vmediopago.Location = new Point(12, 344);
+            Vmediopago.Name = "Vmediopago";
+            Vmediopago.Size = new Size(142, 23);
+            Vmediopago.TabIndex = 4;
             // 
             // GuardarMedios
             // 
@@ -111,16 +104,25 @@
             BorrarMedios.UseVisualStyleBackColor = true;
             BorrarMedios.Click += BorrarMedios_Click;
             // 
+            // Nmediopago
+            // 
+            Nmediopago.FormattingEnabled = true;
+            Nmediopago.Items.AddRange(new object[] { "BancoColombia", "Nequi", "DaviPlata", "BBVA" });
+            Nmediopago.Location = new Point(12, 291);
+            Nmediopago.Name = "Nmediopago";
+            Nmediopago.Size = new Size(142, 23);
+            Nmediopago.TabIndex = 8;
+            // 
             // Medios_de_pago
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 407);
+            ClientSize = new Size(428, 407);
+            Controls.Add(Nmediopago);
             Controls.Add(BorrarMedios);
             Controls.Add(EditarMedios);
             Controls.Add(GuardarMedios);
-            Controls.Add(Dmediopago);
-            Controls.Add(Nmediopago);
+            Controls.Add(Vmediopago);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dataGridView_Mediopago);
@@ -136,10 +138,10 @@
         private DataGridView dataGridView_Mediopago;
         private Label label1;
         private Label label2;
-        private TextBox Nmediopago;
-        private TextBox Dmediopago;
+        private TextBox Vmediopago;
         private Button GuardarMedios;
         private Button EditarMedios;
         private Button BorrarMedios;
+        private ComboBox Nmediopago;
     }
 }

@@ -18,13 +18,13 @@ namespace Negocios
             tabla = Pago.MostrarM();
             return tabla;
         }
-        public void InsertarMRod(string nombreC, string descC)
+        public void InsertarMRod(string nombreC, string valC)
         {
-            Pago.InsertarM(nombreC, descC);
+            Pago.InsertarM(nombreC, valC);
         }
-        public void EditarMRod(string nombreC, string descC, string idC)
+        public void EditarMRod(string nombreC, string valC, string idC)
         {
-            Pago.EditarM(nombreC, descC, Convert.ToInt32(idC));
+            Pago.EditarM(nombreC, valC, Convert.ToInt32(idC));
         }
         public void EliminarMRod(string idc)
         {

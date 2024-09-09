@@ -53,7 +53,7 @@ namespace Presentacion
             {
                 try
                 {
-                    Mediopago.InsertarMRod(Nmediopago.Text, Dmediopago.Text);
+                    Mediopago.InsertarMRod(Nmediopago.Text, Vmediopago.Text);
                     MessageBox.Show("se inserto correctamente");
                     MostrarMediopago();
                     limpiarForm();
@@ -68,7 +68,7 @@ namespace Presentacion
             {
                 try
                 {
-                    Mediopago.EditarMRod(Nmediopago.Text, Dmediopago.Text, idMediopago);
+                    Mediopago.EditarMRod(Nmediopago.Text, Vmediopago.Text, idMediopago);
                     MessageBox.Show("se edito correctamente");
                     MostrarMediopago();
                     limpiarForm();
@@ -82,8 +82,7 @@ namespace Presentacion
         }
         private void limpiarForm()
         {
-            Nmediopago.Clear();
-            Dmediopago.Clear();
+            Vmediopago.Clear();
         }
 
         private void EditarMedios_Click(object sender, EventArgs e)
@@ -92,7 +91,7 @@ namespace Presentacion
             {
                 Editar = true;
                 Nmediopago.Text = dataGridView_Mediopago.CurrentRow.Cells["NombreMediopago"].Value.ToString();
-                Dmediopago.Text = dataGridView_Mediopago.CurrentRow.Cells["Descripcion"].Value.ToString();
+                Vmediopago.Text = dataGridView_Mediopago.CurrentRow.Cells["Valor"].Value.ToString();
                 idMediopago = dataGridView_Mediopago.CurrentRow.Cells["IdMedioPago"].Value.ToString();
             }
             else
