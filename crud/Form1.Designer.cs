@@ -160,6 +160,7 @@
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(75, 23);
             numericUpDown1.TabIndex = 27;
+
             // 
             // label6
             // 

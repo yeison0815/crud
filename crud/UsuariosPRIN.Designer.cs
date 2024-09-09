@@ -28,18 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            menuStrip1 = new MenuStrip();
+            productosToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { productosToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(907, 24);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // productosToolStripMenuItem
+            // 
+            productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            productosToolStripMenuItem.Size = new Size(76, 20);
+            productosToolStripMenuItem.Text = "Productos ";
+            productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
             // 
             // UsuariosPRIN
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(393, 274);
+            ClientSize = new Size(907, 417);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "UsuariosPRIN";
             Text = "UsuariosPRIN";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem productosToolStripMenuItem;
     }
 }

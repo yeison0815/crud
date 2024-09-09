@@ -28,19 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
+            menuStrip1 = new MenuStrip();
+            categoriaToolStripMenuItem = new ToolStripMenuItem();
+            medioDePagoToolStripMenuItem = new ToolStripMenuItem();
+            facturaToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { categoriaToolStripMenuItem, medioDePagoToolStripMenuItem, facturaToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(852, 24);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // categoriaToolStripMenuItem
+            // 
+            categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
+            categoriaToolStripMenuItem.Size = new Size(146, 20);
+            categoriaToolStripMenuItem.Text = "Categoria de productos ";
+            categoriaToolStripMenuItem.Click += categoriaToolStripMenuItem_Click;
+            // 
+            // medioDePagoToolStripMenuItem
+            // 
+            medioDePagoToolStripMenuItem.Name = "medioDePagoToolStripMenuItem";
+            medioDePagoToolStripMenuItem.Size = new Size(102, 20);
+            medioDePagoToolStripMenuItem.Text = "Medio de pago ";
+            medioDePagoToolStripMenuItem.Click += medioDePagoToolStripMenuItem_Click;
+            // 
+            // facturaToolStripMenuItem
+            // 
+            facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
+            facturaToolStripMenuItem.Size = new Size(61, 20);
+            facturaToolStripMenuItem.Text = "Factura ";
             // 
             // Clientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(394, 267);
+            ClientSize = new Size(852, 378);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Clientes";
             Text = "ClientescLcs";
             Load += Clientes_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem categoriaToolStripMenuItem;
+        private ToolStripMenuItem medioDePagoToolStripMenuItem;
+        private ToolStripMenuItem facturaToolStripMenuItem;
     }
 }

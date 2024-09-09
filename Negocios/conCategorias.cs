@@ -18,24 +18,14 @@ namespace Negocios
             tabla = Categorias.MostrarC();
             return tabla;
         }
-        public void InsertarCRod(string nombreC, string descC)
+        public string getNombre(int id)
         {
-            Categorias.InsertarC(nombreC, descC);
-        }
-        public void EditarCRod(string nombreC, string descC,string idC)
-        {
-            Categorias.EditarC(nombreC, descC, Convert.ToInt32(idC));
-        }
-        public void EliminarCRod(string idc)
-        {
-            Categorias.EliminarC(Convert.ToInt32(idc));
+            return Categorias.getNombreCategoria(id);
         }
 
-        public string getNombreCategorias(int idC)
+        public int Contar()
         {
-            return Categorias.getNombreCategoria(idC);
+            return Categorias.contarCategorias();
         }
-
-
     }
 }

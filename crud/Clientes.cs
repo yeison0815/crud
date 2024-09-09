@@ -33,5 +33,21 @@ namespace Presentacion
         {
 
         }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Categoria_de_productos frm = Categoria_de_productos.categoriaPRO_unico();
+            frm.MdiParent = null;
+            frm.Show();
+            frm.BringToFront();
+        }
+
+        private void medioDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Medios_de_pago frm = Medios_de_pago.medioPAGO_unico();
+            frm.MdiParent = null;
+            frm.Show();
+            frm.BringToFront();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using crud;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,14 @@ namespace Presentacion
         public UsuariosPRIN()
         {
             InitializeComponent();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMain frm = frmMain.producto_unico();
+            frm.MdiParent = null;
+            frm.Show();
+            frm.BringToFront();
         }
     }
 }

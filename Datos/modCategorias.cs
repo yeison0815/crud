@@ -20,7 +20,7 @@ namespace Datos
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "MostrarCategoria";
+            comando.CommandText = "MostrarProducto";
             comando.CommandType = CommandType.StoredProcedure;
             buffer = comando.ExecuteReader();
             tabla.Load(buffer);
@@ -32,24 +32,30 @@ namespace Datos
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from CategoriaProducto";
+            comando.CommandText = "select * from Producto";
             buffer = comando.ExecuteReader();
             tabla.Load(buffer);
             conexion.CerrarConexion();
             return tabla;
 
         }
-
-
-        public string getNombreCategoria(int IdCategoria)
+        public Int32 contarCategorias()
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select NombreCategoria from CategoriaProducto where IdCategoria = @idC";
-            comando.Parameters.AddWithValue("@idC", IdCategoria);
+            comando.CommandText = "select count(*) as cuenta from Producto";
+            Int32 cont = (Int32)comando.ExecuteScalar();
+            conexion.CerrarConexion();
+            return cont;
+        }
+        public string getNombreCategoria(int IdProducto)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "select NombreProducto from Producto where IdProducto = @id";
+            comando.Parameters.AddWithValue("@id", IdProducto);
             SqlDataReader data = comando.ExecuteReader();
             string nombre;
             if (data.Read())
-                nombre = data["NombreCategoria"].ToString();
+                nombre = data["NombreProducto"].ToString();
             else
                 nombre = "No encontrado";
 
@@ -57,74 +63,6 @@ namespace Datos
             conexion.CerrarConexion();
             return (nombre);
         }
-        public void Insertar_SC(string nombreCategoria, string descripC)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "InsetarCategoria";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@NombreCat", nombreCategoria);
-            comando.Parameters.AddWithValue("@descripCategoria", descripC);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-        }
 
-        public void InsertarC(string nombreCategoria, string descripC)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into CategoriaProducto (NombreCategoria, Descripcion) values (@NombreCat,@descripCategoria);";
-            comando.Parameters.AddWithValue("@NombreCat", nombreCategoria);
-            comando.Parameters.AddWithValue("@descripCategoria", descripC);
-
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-        }
-        public void Editar_SC(string nombreCategoria, string descripC,int idCategoria)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EditarCategoria";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@NombreCat", nombreCategoria);
-            comando.Parameters.AddWithValue("@descripCategoria", descripC);
-            comando.Parameters.AddWithValue("@idC", idCategoria);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-        }
-
-        public void EditarC(string nombreCategoria, string descripC,int idCategoria)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "update CategoriaProducto set NombreCategoria=@NombreCat, Descripcion=@descripCategoria where IdCategoria=@idC";
-            comando.CommandType = CommandType.Text;
-            comando.Parameters.AddWithValue("@NombreCat", nombreCategoria);
-            comando.Parameters.AddWithValue("@descripCategoria", descripC);
-            comando.Parameters.AddWithValue("@idC", idCategoria);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-        }
-        public void Eliminar_SC(int idCategoria)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EliminarCategoria";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idC", idCategoria);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-        }
-
-        public void EliminarC(int idCategoria)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "delete from CategoriaProducto where IdCategoria=@idCat";
-            comando.CommandType = CommandType.Text;
-            comando.Parameters.AddWithValue("@idCat", idCategoria);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-        }
     }
 }
