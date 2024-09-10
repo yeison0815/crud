@@ -16,7 +16,7 @@ namespace Datos
 
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
-        public DataTable Mostrar_SC()
+        public DataTable Actualizar_SC()
         {
 
             comando.Connection = conexion.AbrirConexion();
@@ -28,7 +28,7 @@ namespace Datos
             return tabla;
 
         }
-        public DataTable MostrarC()
+        public DataTable ActualizarC()
         {
 
             comando.Connection = conexion.AbrirConexion();

@@ -12,10 +12,10 @@ namespace Negocios
     {
 
         private modCategorias Categorias = new modCategorias();
-        public DataTable MostrarCRod()
+        public DataTable ActualizarCRod()
         {
             DataTable tabla = new DataTable();
-            tabla = Categorias.MostrarC();
+            tabla = Categorias.ActualizarC();
             return tabla;
         }
         public string getNombre(int id)

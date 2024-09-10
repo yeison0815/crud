@@ -30,12 +30,13 @@
         {
             menuStrip1 = new MenuStrip();
             productosToolStripMenuItem = new ToolStripMenuItem();
+            facturaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { productosToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { productosToolStripMenuItem, facturaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(907, 24);
@@ -48,6 +49,13 @@
             productosToolStripMenuItem.Size = new Size(76, 20);
             productosToolStripMenuItem.Text = "Productos ";
             productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
+            // 
+            // facturaToolStripMenuItem
+            // 
+            facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
+            facturaToolStripMenuItem.Size = new Size(58, 20);
+            facturaToolStripMenuItem.Text = "Factura";
+            facturaToolStripMenuItem.Click += facturaToolStripMenuItem_Click;
             // 
             // UsuariosPRIN
             // 
@@ -68,5 +76,6 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem productosToolStripMenuItem;
+        private ToolStripMenuItem facturaToolStripMenuItem;
     }
 }

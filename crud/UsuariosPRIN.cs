@@ -37,5 +37,13 @@ namespace Presentacion
             frm.Show();
             frm.BringToFront();
         }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Factura frm = Factura.factura_AD_unico();
+            frm.MdiParent = null;
+            frm.Show();
+            frm.BringToFront();
+        }
     }
 }

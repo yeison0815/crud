@@ -61,8 +61,8 @@
             // facturaToolStripMenuItem
             // 
             facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            facturaToolStripMenuItem.Size = new Size(61, 20);
-            facturaToolStripMenuItem.Text = "Factura ";
+            facturaToolStripMenuItem.Size = new Size(58, 20);
+            facturaToolStripMenuItem.Text = "Factura";
             facturaToolStripMenuItem.Click += facturaToolStripMenuItem_Click;
             // 
             // Clientes

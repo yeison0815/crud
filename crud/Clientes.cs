@@ -52,7 +52,7 @@ namespace Presentacion
 
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Factura frm = Factura.factura_unico();
+            Factura_Cl frm = Factura_Cl.factura_unico();
             frm.MdiParent = null;
             frm.Show();
             frm.BringToFront();
