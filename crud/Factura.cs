@@ -13,6 +13,10 @@ namespace Presentacion
 {
     public partial class Factura : Form
     {
+        public Factura()
+        {
+            InitializeComponent();
+        }
         private static Factura instancia = null;
         public static Factura factura_AD_unico()
         {
