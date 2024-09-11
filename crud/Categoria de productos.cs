@@ -28,18 +28,17 @@ namespace Presentacion
         }
 
         private conCategorias Categorias = new conCategorias();
-        private string idCategoria = null;
-        private bool Editar = false;
+        private bool ACTUALIZAR = false;
 
         private void Categoria_load(object sender, EventArgs e)
         {
-            MostrarCategorias();
+            ActualizarCategorias();
         }
 
-        private void MostrarCategorias()
+        private void ActualizarCategorias()
         {
             conCategorias objeto = new conCategorias();
-            dataGridView_categoria.DataSource = objeto.MostrarCRod();
+            dataGridView_categoria.DataSource = objeto.ActualizarCRod();
         }
         public Categoria_de_productos()
         {
@@ -49,11 +48,11 @@ namespace Presentacion
         private void actualizarcategoria_Click(object sender, EventArgs e)
         {
             //ACTUALIZAR
-            if (Editar == false)
+            if (ACTUALIZAR == false)
             {
 
-                MessageBox.Show("se actualizo correctamente");
-                MostrarCategorias();
+                MessageBox.Show("Se actualizo correctamente");
+                ActualizarCategorias();
             }
 
 

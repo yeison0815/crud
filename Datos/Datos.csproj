@@ -61,7 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="modFactura.cs" />
     <Compile Include="modCategorias.cs" />
+    <Compile Include="modFactura_Cl.cs" />
     <Compile Include="modMediopago.cs" />
     <Compile Include="modProductos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
