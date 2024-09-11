@@ -14,7 +14,9 @@ namespace Presentacion
     public partial class Factura : Form
     {
         public Factura()
+       
         {
+            MostrarMediopago();
             InitializeComponent();
         }
         private static Factura instancia = null;
@@ -30,36 +32,42 @@ namespace Presentacion
             return instancia;
         }
 
+        private conMediopago Mediopago = new conMediopago();
+        private string idMediopago = null;
+        private bool Editar = false;
 
-        private void Factura_Load(object sender, EventArgs e)
+
+
+        private void MostrarMediopago()
         {
+            conMediopago objeto = new conMediopago();
+            dataGridView_Factura.DataSource = objeto.MostrarMRod();
 
         }
 
 
+       
+        private void limpiarForm()
+        {
+            COS_factura.Clear();
+        }
         private void Adicionar_Click_1(object sender, EventArgs e)
         {
-
-            //funciona sin base de datos
-            if (dataGridView_Factura.SelectedRows.Count > 0)
+            if (Editar == false)
             {
-
-                int n = dataGridView_Factura.Rows.Add();
-
-                CLI_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_cliente"].Value.ToString();
-                MEP_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_mediopago"].Value.ToString();
-                PRO_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_producto"].Value.ToString();
-                CAN_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_cantidad"].Value.ToString();
-                FEC_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_fecha"].Value.ToString();
-                COS_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_costo"].Value.ToString();
-
+                try
+                {
+                    Mediopago.InsertarMRod(MEP_factura.Text, COS_factura.Text);
+                    MessageBox.Show("se inserto correctamente");
+                    MostrarMediopago();
+                    limpiarForm();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                }
             }
-            else
-            {
-                // Manejo de la situación cuando no hay una fila seleccionada
-                MessageBox.Show("No hay una fila seleccionada en el DataGridView.");
-            }
-
+         
         }
     }
 }

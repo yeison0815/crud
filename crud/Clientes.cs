@@ -42,14 +42,6 @@ namespace Presentacion
             frm.BringToFront();
         }
 
-        private void medioDePagoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Medios_de_pago frm = Medios_de_pago.medioPAGO_unico();
-            frm.MdiParent = null;
-            frm.Show();
-            frm.BringToFront();
-        }
-
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Factura_Cl frm = Factura_Cl.factura_unico();

@@ -56,7 +56,6 @@
             medioDePagoToolStripMenuItem.Name = "medioDePagoToolStripMenuItem";
             medioDePagoToolStripMenuItem.Size = new Size(102, 20);
             medioDePagoToolStripMenuItem.Text = "Medio de pago ";
-            medioDePagoToolStripMenuItem.Click += medioDePagoToolStripMenuItem_Click;
             // 
             // facturaToolStripMenuItem
             // 

@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             dataGridView_Factura = new DataGridView();
-            DT_cliente = new DataGridViewTextBoxColumn();
-            DT_mediopago = new DataGridViewTextBoxColumn();
-            DT_producto = new DataGridViewTextBoxColumn();
-            DT_cantidad = new DataGridViewTextBoxColumn();
-            DT_fecha = new DataGridViewTextBoxColumn();
-            DT_costo = new DataGridViewTextBoxColumn();
             label1 = new Label();
             CLI_factura = new TextBox();
             label2 = new Label();
@@ -57,41 +51,10 @@
             // dataGridView_Factura
             // 
             dataGridView_Factura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView_Factura.Columns.AddRange(new DataGridViewColumn[] { DT_cliente, DT_mediopago, DT_producto, DT_cantidad, DT_fecha, DT_costo });
             dataGridView_Factura.Location = new Point(12, 164);
             dataGridView_Factura.Name = "dataGridView_Factura";
             dataGridView_Factura.Size = new Size(643, 200);
             dataGridView_Factura.TabIndex = 0;
-            // 
-            // DT_cliente
-            // 
-            DT_cliente.HeaderText = "Cliente";
-            DT_cliente.Name = "DT_cliente";
-            // 
-            // DT_mediopago
-            // 
-            DT_mediopago.HeaderText = "Medio de Pago";
-            DT_mediopago.Name = "DT_mediopago";
-            // 
-            // DT_producto
-            // 
-            DT_producto.HeaderText = "Producto";
-            DT_producto.Name = "DT_producto";
-            // 
-            // DT_cantidad
-            // 
-            DT_cantidad.HeaderText = "Cantidad";
-            DT_cantidad.Name = "DT_cantidad";
-            // 
-            // DT_fecha
-            // 
-            DT_fecha.HeaderText = "Fecha";
-            DT_fecha.Name = "DT_fecha";
-            // 
-            // DT_costo
-            // 
-            DT_costo.HeaderText = "Costo";
-            DT_costo.Name = "DT_costo";
             // 
             // label1
             // 
@@ -246,7 +209,6 @@
             Controls.Add(dataGridView_Factura);
             Name = "Factura";
             Text = "Facturacs";
-            Load += Factura_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView_Factura).EndInit();
             ((System.ComponentModel.ISupportInitialize)CAN_factura).EndInit();
             ResumeLayout(false);
@@ -269,12 +231,6 @@
         private Button Guardar;
         private TextBox textBox1;
         private Label label7;
-        private DataGridViewTextBoxColumn DT_cliente;
-        private DataGridViewTextBoxColumn DT_mediopago;
-        private DataGridViewTextBoxColumn DT_producto;
-        private DataGridViewTextBoxColumn DT_cantidad;
-        private DataGridViewTextBoxColumn DT_fecha;
-        private DataGridViewTextBoxColumn DT_costo;
         private TextBox COS_factura;
         private ComboBox MEP_factura;
     }
