@@ -25,8 +25,24 @@ namespace Presentacion
             }
             return instancia;
         }
-       
 
 
+        private void Factura_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void Adicionar_Click(object sender, EventArgs e)
+        {
+
+            //funciona sin base de datos
+
+            CLI_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_cliente"].Value.ToString();
+            MEP_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_mediopago"].Value.ToString();
+            PRO_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_producto"].Value.ToString();
+            CAN_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_cantidad"].Value.ToString();
+            FEC_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_fecha"].Value.ToString();
+
+
+        }
     }
 }
