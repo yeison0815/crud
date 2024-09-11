@@ -3,17 +3,16 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using BCrypt.Net;
 
-
 namespace Presentacion
 {
     public partial class Usuarios : Form
     {
-
         public Usuarios()
         {
             InitializeComponent();
         }
 
+        // Método para abrir el formulario del cliente
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Clientes frm = Clientes.clientes_unico();
@@ -22,6 +21,7 @@ namespace Presentacion
             frm.BringToFront();
         }
 
+        // Método para abrir el formulario de usuarios principales (administrador)
         private void usuariosPrincipalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UsuariosPRIN frm = UsuariosPRIN.usuario_unico();
@@ -30,6 +30,7 @@ namespace Presentacion
             frm.BringToFront();
         }
 
+        // Botón de inicio de sesión
         private void button1_Click(object sender, EventArgs e)
         {
             string nombreUsuario = textBox1.Text;
@@ -46,7 +47,8 @@ namespace Presentacion
                 using (SqlConnection connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Inventario;Integrated Security=True;TrustServerCertificate=true;"))
                 {
                     connection.Open();
-                    string query = "SELECT Contraseña FROM Usuario WHERE NombreUsuario = @NombreUsuario";
+                    // Consulta para obtener la contraseña y el rol del usuario
+                    string query = "SELECT Contraseña, Rol FROM Usuario WHERE NombreUsuario = @NombreUsuario";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
@@ -55,12 +57,35 @@ namespace Presentacion
                         if (reader.Read())
                         {
                             string contraseñaHasheada = reader["Contraseña"].ToString();
+                            string rol = reader["Rol"].ToString();
 
-                            // Compara la contraseña ingresada con el hash
+                            // Verifica la contraseña con el hash
                             if (BCrypt.Net.BCrypt.Verify(contraseña, contraseñaHasheada))
                             {
                                 MessageBox.Show("Inicio de sesión exitoso.");
-                                // Aquí puedes redirigir al usuario a la siguiente parte del programa.
+
+                                // Redirigir según el rol del usuario
+                                this.Hide(); // Oculta el formulario actual
+
+                                if (rol == "administrador")
+                                {
+                                    // Abrir el formulario de administrador
+                                    UsuariosPRIN frmAdmin = new UsuariosPRIN();
+                                    frmAdmin.FormClosed += (s, args) => this.Show(); // Muestra el formulario actual cuando el otro se cierre
+                                    frmAdmin.Show();
+                                }
+                                else if (rol == "usuario")
+                                {
+                                    // Abrir el formulario de cliente
+                                    Clientes frmCliente = new Clientes();
+                                    frmCliente.FormClosed += (s, args) => this.Show(); // Muestra el formulario actual cuando el otro se cierre
+                                    frmCliente.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Rol no reconocido.");
+                                    this.Show(); // Si hay un error, muestra de nuevo el formulario actual
+                                }
                             }
                             else
                             {
@@ -80,14 +105,11 @@ namespace Presentacion
             }
         }
 
+        // Botón para abrir el formulario de registro
         private void button2_Click(object sender, EventArgs e)
         {
             Registro nuevoFormulario = new Registro();
-
-            // Muestra el nuevo formulario
             nuevoFormulario.Show();
-
-            // Opcional: Ocultar o cerrar el formulario actual
             this.Hide();
         }
     }
