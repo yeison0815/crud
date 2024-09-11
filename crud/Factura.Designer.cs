@@ -200,6 +200,7 @@
             Controls.Add(label2);
             Name = "Factura";
             Text = "Factura";
+            Load += Factura_Load;
             ((System.ComponentModel.ISupportInitialize)CAN_factura).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Factura).EndInit();
             ResumeLayout(false);

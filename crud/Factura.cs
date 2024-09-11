@@ -25,8 +25,10 @@ namespace Presentacion
             }
             return instancia;
         }
-       
 
+        private void Factura_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
