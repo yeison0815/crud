@@ -29,6 +29,8 @@ namespace Presentacion
         private void Adicionar_Click(object sender, EventArgs e)
         {
 
+            //funciona sin base de datos
+
             CLI_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_cliente"].Value.ToString();
             MEP_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_mediopago"].Value.ToString();
             PRO_factura.Text = dataGridView_Factura.CurrentRow.Cells["DT_producto"].Value.ToString();
