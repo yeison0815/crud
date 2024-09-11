@@ -13,10 +13,12 @@ namespace Presentacion
 {
     public partial class Factura : Form
     {
+
+
         public Factura()
        
         {
-            MostrarMediopago();
+            MostrarFactura();
             InitializeComponent();
         }
         private static Factura instancia = null;
@@ -32,16 +34,16 @@ namespace Presentacion
             return instancia;
         }
 
-        private conMediopago Mediopago = new conMediopago();
-        private string idMediopago = null;
+        private conFactura factura = new conFactura();
+        private string idFactura = null;
         private bool Editar = false;
 
 
 
-        private void MostrarMediopago()
+        private void MostrarFactura()
         {
-            conMediopago objeto = new conMediopago();
-            dataGridView_Factura.DataSource = objeto.MostrarMRod();
+            conFactura objeto = new conFactura();
+            dataGridView_Factura.DataSource = objeto.MostrarFRod();
 
         }
 
@@ -57,9 +59,9 @@ namespace Presentacion
             {
                 try
                 {
-                    Mediopago.InsertarMRod(MEP_factura.Text, COS_factura.Text);
+                    factura.InsertarFRod(CLI_factura.Text, PRO_factura.Text, CAN_factura.Text, FEC_factura.Text);
                     MessageBox.Show("se inserto correctamente");
-                    MostrarMediopago();
+                    MostrarFactura();
                     limpiarForm();
                 }
                 catch (Exception ex)
@@ -67,7 +69,7 @@ namespace Presentacion
                     MessageBox.Show("no se pudo insertar los datos por: " + ex);
                 }
             }
-         
-        }
+
+            }
     }
 }

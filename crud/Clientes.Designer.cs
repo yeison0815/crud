@@ -30,14 +30,13 @@
         {
             menuStrip1 = new MenuStrip();
             categoriaToolStripMenuItem = new ToolStripMenuItem();
-            medioDePagoToolStripMenuItem = new ToolStripMenuItem();
             facturaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { categoriaToolStripMenuItem, medioDePagoToolStripMenuItem, facturaToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { categoriaToolStripMenuItem, facturaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(852, 24);
@@ -50,13 +49,7 @@
             categoriaToolStripMenuItem.Size = new Size(146, 20);
             categoriaToolStripMenuItem.Text = "Categoria de productos ";
             categoriaToolStripMenuItem.Click += categoriaToolStripMenuItem_Click;
-            // 
-            // medioDePagoToolStripMenuItem
-            // 
-            medioDePagoToolStripMenuItem.Name = "medioDePagoToolStripMenuItem";
-            medioDePagoToolStripMenuItem.Size = new Size(102, 20);
-            medioDePagoToolStripMenuItem.Text = "Medio de pago ";
-            // 
+
             // facturaToolStripMenuItem
             // 
             facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
@@ -84,7 +77,6 @@
 
         private MenuStrip menuStrip1;
         private ToolStripMenuItem categoriaToolStripMenuItem;
-        private ToolStripMenuItem medioDePagoToolStripMenuItem;
         private ToolStripMenuItem facturaToolStripMenuItem;
     }
 }
