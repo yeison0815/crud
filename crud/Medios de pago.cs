@@ -110,5 +110,10 @@ namespace Presentacion
             else
                 MessageBox.Show("seleccione una fila por favor");
         }
+
+        private void Nmediopago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

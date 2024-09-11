@@ -37,7 +37,6 @@
             DT_costo = new DataGridViewTextBoxColumn();
             label1 = new Label();
             CLI_factura = new TextBox();
-            MEP_factura = new TextBox();
             label2 = new Label();
             PRO_factura = new TextBox();
             label3 = new Label();
@@ -50,6 +49,7 @@
             textBox1 = new TextBox();
             label7 = new Label();
             COS_factura = new TextBox();
+            MEP_factura = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Factura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CAN_factura).BeginInit();
             SuspendLayout();
@@ -109,13 +109,6 @@
             CLI_factura.Name = "CLI_factura";
             CLI_factura.Size = new Size(145, 23);
             CLI_factura.TabIndex = 2;
-            // 
-            // MEP_factura
-            // 
-            MEP_factura.Location = new Point(12, 85);
-            MEP_factura.Name = "MEP_factura";
-            MEP_factura.Size = new Size(145, 23);
-            MEP_factura.TabIndex = 4;
             // 
             // label2
             // 
@@ -222,11 +215,20 @@
             COS_factura.Size = new Size(93, 23);
             COS_factura.TabIndex = 17;
             // 
+            // MEP_factura
+            // 
+            MEP_factura.FormattingEnabled = true;
+            MEP_factura.Location = new Point(12, 85);
+            MEP_factura.Name = "MEP_factura";
+            MEP_factura.Size = new Size(145, 23);
+            MEP_factura.TabIndex = 18;
+            // 
             // Factura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(667, 450);
+            Controls.Add(MEP_factura);
             Controls.Add(COS_factura);
             Controls.Add(textBox1);
             Controls.Add(label7);
@@ -238,7 +240,6 @@
             Controls.Add(CAN_factura);
             Controls.Add(PRO_factura);
             Controls.Add(label3);
-            Controls.Add(MEP_factura);
             Controls.Add(label2);
             Controls.Add(CLI_factura);
             Controls.Add(label1);
@@ -257,7 +258,6 @@
         private DataGridView dataGridView_Factura;
         private Label label1;
         private TextBox CLI_factura;
-        private TextBox MEP_factura;
         private Label label2;
         private TextBox PRO_factura;
         private Label label3;
@@ -276,5 +276,6 @@
         private DataGridViewTextBoxColumn DT_fecha;
         private DataGridViewTextBoxColumn DT_costo;
         private TextBox COS_factura;
+        private ComboBox MEP_factura;
     }
 }

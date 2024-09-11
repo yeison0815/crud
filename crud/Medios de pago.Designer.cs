@@ -102,7 +102,6 @@
             BorrarMedios.TabIndex = 7;
             BorrarMedios.Text = "Borrar";
             BorrarMedios.UseVisualStyleBackColor = true;
-            BorrarMedios.Click += BorrarMedios_Click;
             // 
             // Nmediopago
             // 
@@ -112,6 +111,7 @@
             Nmediopago.Name = "Nmediopago";
             Nmediopago.Size = new Size(142, 23);
             Nmediopago.TabIndex = 8;
+            Nmediopago.SelectedIndexChanged += Nmediopago_SelectedIndexChanged;
             // 
             // Medios_de_pago
             // 
