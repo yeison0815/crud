@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             dataGridView_Factura = new DataGridView();
+            DT_cliente = new DataGridViewTextBoxColumn();
+            DT_mediopago = new DataGridViewTextBoxColumn();
+            DT_producto = new DataGridViewTextBoxColumn();
+            DT_cantidad = new DataGridViewTextBoxColumn();
+            DT_fecha = new DataGridViewTextBoxColumn();
+            DT_costo = new DataGridViewTextBoxColumn();
             label1 = new Label();
             CLI_factura = new TextBox();
             MEP_factura = new TextBox();
@@ -38,12 +44,12 @@
             CAN_factura = new NumericUpDown();
             label4 = new Label();
             label5 = new Label();
-            label6 = new Label();
             FEC_factura = new DateTimePicker();
             Adicionar = new Button();
             Guardar = new Button();
             textBox1 = new TextBox();
             label7 = new Label();
+            COS_factura = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Factura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CAN_factura).BeginInit();
             SuspendLayout();
@@ -51,10 +57,41 @@
             // dataGridView_Factura
             // 
             dataGridView_Factura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_Factura.Columns.AddRange(new DataGridViewColumn[] { DT_cliente, DT_mediopago, DT_producto, DT_cantidad, DT_fecha, DT_costo });
             dataGridView_Factura.Location = new Point(12, 164);
             dataGridView_Factura.Name = "dataGridView_Factura";
-            dataGridView_Factura.Size = new Size(719, 200);
+            dataGridView_Factura.Size = new Size(643, 200);
             dataGridView_Factura.TabIndex = 0;
+            // 
+            // DT_cliente
+            // 
+            DT_cliente.HeaderText = "Cliente";
+            DT_cliente.Name = "DT_cliente";
+            // 
+            // DT_mediopago
+            // 
+            DT_mediopago.HeaderText = "Medio de Pago";
+            DT_mediopago.Name = "DT_mediopago";
+            // 
+            // DT_producto
+            // 
+            DT_producto.HeaderText = "Producto";
+            DT_producto.Name = "DT_producto";
+            // 
+            // DT_cantidad
+            // 
+            DT_cantidad.HeaderText = "Cantidad";
+            DT_cantidad.Name = "DT_cantidad";
+            // 
+            // DT_fecha
+            // 
+            DT_fecha.HeaderText = "Fecha";
+            DT_fecha.Name = "DT_fecha";
+            // 
+            // DT_costo
+            // 
+            DT_costo.HeaderText = "Costo";
+            DT_costo.Name = "DT_costo";
             // 
             // label1
             // 
@@ -134,15 +171,6 @@
             label5.TabIndex = 9;
             label5.Text = "Costo";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(294, 138);
-            label6.Name = "label6";
-            label6.Size = new Size(65, 15);
-            label6.TabIndex = 10;
-            label6.Text = "valor costo";
-            // 
             // FEC_factura
             // 
             FEC_factura.Location = new Point(180, 33);
@@ -152,16 +180,17 @@
             // 
             // Adicionar
             // 
-            Adicionar.Location = new Point(401, 122);
+            Adicionar.Location = new Point(524, 127);
             Adicionar.Name = "Adicionar";
             Adicionar.Size = new Size(131, 31);
             Adicionar.TabIndex = 12;
             Adicionar.Text = "Adicionar";
             Adicionar.UseVisualStyleBackColor = true;
+            Adicionar.Click += Adicionar_Click_1;
             // 
             // Guardar
             // 
-            Guardar.Location = new Point(600, 407);
+            Guardar.Location = new Point(524, 407);
             Guardar.Name = "Guardar";
             Guardar.Size = new Size(131, 31);
             Guardar.TabIndex = 13;
@@ -170,7 +199,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(600, 378);
+            textBox1.Location = new Point(524, 378);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(131, 23);
             textBox1.TabIndex = 15;
@@ -180,23 +209,30 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(530, 380);
+            label7.Location = new Point(454, 380);
             label7.Name = "label7";
             label7.Size = new Size(52, 21);
             label7.TabIndex = 14;
             label7.Text = "Total:";
             // 
+            // COS_factura
+            // 
+            COS_factura.Location = new Point(294, 135);
+            COS_factura.Name = "COS_factura";
+            COS_factura.Size = new Size(93, 23);
+            COS_factura.TabIndex = 17;
+            // 
             // Factura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(667, 450);
+            Controls.Add(COS_factura);
             Controls.Add(textBox1);
             Controls.Add(label7);
             Controls.Add(Guardar);
             Controls.Add(Adicionar);
             Controls.Add(FEC_factura);
-            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(CAN_factura);
@@ -228,11 +264,17 @@
         private NumericUpDown CAN_factura;
         private Label label4;
         private Label label5;
-        private Label label6;
         private DateTimePicker FEC_factura;
         private Button Adicionar;
         private Button Guardar;
         private TextBox textBox1;
         private Label label7;
+        private DataGridViewTextBoxColumn DT_cliente;
+        private DataGridViewTextBoxColumn DT_mediopago;
+        private DataGridViewTextBoxColumn DT_producto;
+        private DataGridViewTextBoxColumn DT_cantidad;
+        private DataGridViewTextBoxColumn DT_fecha;
+        private DataGridViewTextBoxColumn DT_costo;
+        private TextBox COS_factura;
     }
 }
