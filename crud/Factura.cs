@@ -16,12 +16,14 @@ namespace Presentacion
 
 
         public Factura()
-       
         {
-            MostrarFactura();
+
             InitializeComponent();
+
+
         }
         private static Factura instancia = null;
+
         public static Factura factura_AD_unico()
         {
 
@@ -34,9 +36,10 @@ namespace Presentacion
             return instancia;
         }
 
-        private conFactura factura = new conFactura();
-        private string idFactura = null;
+        private conFactura detallefactura = new conFactura();
+        private string idDetalleFactura = null;
         private bool Editar = false;
+
 
 
 
@@ -48,18 +51,24 @@ namespace Presentacion
         }
 
 
-       
+
         private void limpiarForm()
         {
+
+            CAN_factura.Text = "";
             COS_factura.Clear();
+
         }
         private void Adicionar_Click_1(object sender, EventArgs e)
         {
+
+
+
             if (Editar == false)
             {
                 try
                 {
-                    factura.InsertarFRod(CLI_factura.Text, PRO_factura.Text, CAN_factura.Text, FEC_factura.Text);
+                    detallefactura.InsertarFRod(CAN_factura.Text, COS_factura.Text);
                     MessageBox.Show("se inserto correctamente");
                     MostrarFactura();
                     limpiarForm();
@@ -69,7 +78,63 @@ namespace Presentacion
                     MessageBox.Show("no se pudo insertar los datos por: " + ex);
                 }
             }
+            //EDITAR
+            if (Editar == true)
+            {
+                try
+                {
+                    detallefactura.EditarFRod(CAN_factura.Text, COS_factura.Text, idDetalleFactura);
+                    MessageBox.Show("se edito correctamente");
+                    MostrarFactura();
+                    limpiarForm();
+                    Editar = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("no se pudo editar los datos por: " + ex);
+                }
 
             }
+
+        }
+
+        private void Factura_Load(object sender, EventArgs e)
+        {
+            MostrarFactura();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+            if (dataGridView_Factura.SelectedRows.Count > 0)
+            {
+                Editar = true;
+                CAN_factura.Text = dataGridView_Factura.CurrentRow.Cells["Cantidad"].Value.ToString();
+                COS_factura.Text = dataGridView_Factura.CurrentRow.Cells["PrecioVenta"].Value.ToString();
+                idDetalleFactura = dataGridView_Factura.CurrentRow.Cells["IdDetalle"].Value.ToString();
+            }
+            else
+                MessageBox.Show("seleccione una fila por favor");
+
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            double total = 0;
+
+            foreach (DataGridViewRow row in dataGridView_Factura.Rows)
+            {
+
+                total += Convert.ToDouble(row.Cells["PrecioVenta"].Value);
+
+
+            }
+
+            TO_factura.Text = "$"+Convert.ToString(total);
+
+        }
     }
 }

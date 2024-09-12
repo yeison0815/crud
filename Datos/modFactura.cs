@@ -22,7 +22,7 @@ namespace Datos
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "MostrarMediopago";
+            comando.CommandText = "MostrarDetalleFactura";
             comando.CommandType = CommandType.StoredProcedure;
             buffer = comando.ExecuteReader();
             tabla.Load(buffer);
@@ -34,7 +34,7 @@ namespace Datos
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from Factura";
+            comando.CommandText = "select * from DetalleFactura";
             buffer = comando.ExecuteReader();
             tabla.Load(buffer);
             conexion.CerrarConexion();
@@ -43,15 +43,15 @@ namespace Datos
         }
 
 
-        public string getNombreFactura(int IdFac)
+        public string getNombreFactura(int IdDE)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select Cliente from Factura where IdFactura = @idF";
-            comando.Parameters.AddWithValue("@idF", IdFac);
+            comando.CommandText = "select IdFactura from DetalleFactura where IdDetalle = @idD";
+            comando.Parameters.AddWithValue("@idD", IdDE);
             SqlDataReader data = comando.ExecuteReader();
             string nombre;
             if (data.Read())
-                nombre = data["Cliente"].ToString();
+                nombre = data["IdFactura"].ToString();
             else
                 nombre = "No encontrado";
 
@@ -59,82 +59,54 @@ namespace Datos
             conexion.CerrarConexion();
             return (nombre);
         }
-        public void Insertar_SF(string fecha, string cliente, string producto, int cantidad )
+        public void Insertar_SF(int Cantidad, double Precio )
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "InsetarMediopago";
+            comando.CommandText = "InsetarDetalleFactura";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@fecha", fecha);
-            comando.Parameters.AddWithValue("@cliente", cliente);
-            comando.Parameters.AddWithValue("@prodcuto", producto);
-            comando.Parameters.AddWithValue("@cantidad", cantidad);
+            comando.Parameters.AddWithValue("@fecha", Cantidad);
+            comando.Parameters.AddWithValue("@cliente", Precio);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void InsertarF(string fecha, string cliente, string producto, string cantidad)
+        public void InsertarF(int Cantidad, double precio)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "insert into Factura (Fecha, Cliente, Producto, Cantidad) values (@fecha,@cliente,@prodcuto,@cantidad);";
-            comando.Parameters.AddWithValue("@Nfecha", fecha);
-            comando.Parameters.AddWithValue("@cliente", cliente);
-            comando.Parameters.AddWithValue("@producto", producto);
-            comando.Parameters.AddWithValue("@cantidad", cantidad);
+            comando.CommandText = "insert into DetalleFactura (Cantidad, PrecioVenta) values (@Cantidad,@Precio);";
+            comando.Parameters.AddWithValue("@Cantidad", Cantidad);
+            comando.Parameters.AddWithValue("@Precio", precio);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
-        public void Editar_SF(string fecha, string cliente, string producto, int cantidad, int idF)
+        public void Editar_SF(int Cantidad, double precio, int idDF)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EditarFactura";
+            comando.CommandText = "EditarDetalleFactura";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@fecha", fecha);
-            comando.Parameters.AddWithValue("@valorMediopago", cliente);
-            comando.Parameters.AddWithValue("@cliente", producto);
-            comando.Parameters.AddWithValue("@cliente", cantidad);
-            comando.Parameters.AddWithValue("@idF", idF);
+            comando.Parameters.AddWithValue("@cantidad", Cantidad);
+            comando.Parameters.AddWithValue("@Precio", precio);
+            comando.Parameters.AddWithValue("@idDF", idDF);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void EditarF(string fecha, string cliente, string producto, int cantidad, int idF)
+        public void EditarF(int Cantidad, double precio, int idF)
         {
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "update Mediopago set Fecha=@fecha, Cliente=@cliente, Producto=@producto, Cantidad=@cantidad where IdFactura=@idF";
+            comando.CommandText = "update DetalleFactura set  Cantidad=@cantidad, PrecioVenta=@Precio where IdDetalle=@idDF";
             comando.CommandType = CommandType.Text;
-            comando.Parameters.AddWithValue("@fecha", fecha);
-            comando.Parameters.AddWithValue("@producto", producto);
-            comando.Parameters.AddWithValue("@cantidad", cantidad);
-            comando.Parameters.AddWithValue("@cliente", cliente);
-            comando.Parameters.AddWithValue("@idF", idF);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-        }
-        public void Eliminar_SF(int idfa)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "EliminarFactura";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idF", idfa);
+            comando.Parameters.AddWithValue("@cantidad", Cantidad);
+            comando.Parameters.AddWithValue("@Precio", precio);
+            comando.Parameters.AddWithValue("@idDF", idF);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void EliminarF(int idfa)
-        {
-            comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "delete from Factura where IdFactura=@idF";
-            comando.CommandType = CommandType.Text;
-            comando.Parameters.AddWithValue("@idF", idfa);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            conexion.CerrarConexion();
-        }
     
     }
 }

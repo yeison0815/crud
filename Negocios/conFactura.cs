@@ -13,29 +13,26 @@ namespace Negocios
     {
 
 
-        private modFactura factura = new modFactura();
+        private modFactura DetalleFactura = new modFactura();
         public DataTable MostrarFRod()
         {
             DataTable tabla = new DataTable();
-            tabla = factura.MostrarF();
+            tabla = DetalleFactura.MostrarF();
             return tabla;
         }
-        public void InsertarFRod(string fechaF, string clienteF,string productoF, string cantidadF)
+        public void InsertarFRod(string CantidadDF, string precioDF)
         {
-            factura.InsertarF(fechaF, clienteF,productoF,cantidadF);
+            DetalleFactura.InsertarF(Convert.ToInt32(CantidadDF), Convert.ToDouble(precioDF));
         }
-        public void EditarFRod(string fechaF, string clienteF,string productof, string cantidadf, string idF)
+        public void EditarFRod(string CantidadDF, string precioDF, string idDF)
         {
-            factura.EditarF(fechaF, clienteF,productof, Convert.ToInt32(cantidadf), Convert.ToInt32(idF));
-        }
-        public void EliminarFRod(string idc)
-        {
-            factura.EliminarF(Convert.ToInt32(idc));
+            DetalleFactura.EditarF(Convert.ToInt32(CantidadDF),  Convert.ToDouble(precioDF), Convert.ToInt32(idDF));
         }
 
-        public string getNombreFactura(int idF)
+
+        public string getNombreFactura(int idDF)
         {
-            return factura.getNombreFactura(idF);
+            return DetalleFactura.getNombreFactura(idDF);
         }
 
     }

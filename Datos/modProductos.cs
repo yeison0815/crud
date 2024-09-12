@@ -88,7 +88,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@descrip", desc);
             comando.Parameters.AddWithValue("@Marca", marca);
             comando.Parameters.AddWithValue("@precio", precio);
-            comando.Parameters.AddWithValue("@stock", precio);
+            comando.Parameters.AddWithValue("@stock", stock);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             conexion.CerrarConexion();
