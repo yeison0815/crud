@@ -11,7 +11,7 @@ namespace Negocios
     public class conFactura_Cl
     {
 
-        private modCategorias Factura = new modCategorias();
+        private modFactura_Cl Factura = new modFactura_Cl();
         public DataTable ActualizarFRod()
         {
             DataTable tabla = new DataTable();

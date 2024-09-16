@@ -20,7 +20,7 @@ namespace Datos
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "MostrarProducto";
+            comando.CommandText = "MostrarDetallefactura";
             comando.CommandType = CommandType.StoredProcedure;
             buffer = comando.ExecuteReader();
             tabla.Load(buffer);
@@ -32,7 +32,7 @@ namespace Datos
         {
 
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "select * from Producto";
+            comando.CommandText = "select * from DetalleFactura";
             buffer = comando.ExecuteReader();
             tabla.Load(buffer);
             conexion.CerrarConexion();

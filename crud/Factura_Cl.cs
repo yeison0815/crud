@@ -24,30 +24,23 @@ namespace Presentacion
                 return instancia;
             }
             return instancia;
+        }  
+        private void Factura_Load(object sender, EventArgs e)
+        {
+            ActualizarFactura();
         }
-        private conCategorias Factura = new conCategorias();
+        private conFactura_Cl Factura = new conFactura_Cl();
         private bool ACTUALIZAR = false;
 
-        private void Categoria_load(object sender, EventArgs e)
+        private void ActualizarFactura()
         {
-            ActualizarCategorias();
-        }
-
-        private void ActualizarCategorias()
-        {
-            conCategorias objeto = new conCategorias();
+            conFactura_Cl objeto = new conFactura_Cl();
             dataGridView_Factura.DataSource = objeto.ActualizarFRod();
         }
         public Factura_Cl()
         {
             InitializeComponent();
         }
-
-        private void Factura_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void actualizar_Click(object sender, EventArgs e)
         {
             //ACTUALIZAR
@@ -55,7 +48,7 @@ namespace Presentacion
             {
 
                 MessageBox.Show("Se actualizo correctamente");
-                ActualizarCategorias();
+                ActualizarFactura();
             }
         }
     }
