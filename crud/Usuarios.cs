@@ -89,12 +89,12 @@ namespace Presentacion
                             }
                             else
                             {
-                                MessageBox.Show("Contraseña incorrecta.");
+                                MessageBox.Show("Usuario o contraseña incorrectos.");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Usuario no encontrado.");
+                            MessageBox.Show("Usuario o contraseña incorrectos.");
                         }
                     }
                 }
