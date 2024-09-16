@@ -41,6 +41,7 @@
             // 
             // dataGridView_categoria
             // 
+            dataGridView_categoria.BackgroundColor = Color.FromArgb(224, 224, 224);
             dataGridView_categoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_categoria.Location = new Point(12, 12);
             dataGridView_categoria.Name = "dataGridView_categoria";
@@ -49,16 +50,19 @@
             // 
             // actualizarcategoria
             // 
+            actualizarcategoria.BackColor = Color.White;
+            actualizarcategoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             actualizarcategoria.Location = new Point(12, 328);
             actualizarcategoria.Name = "actualizarcategoria";
             actualizarcategoria.Size = new Size(86, 28);
             actualizarcategoria.TabIndex = 1;
             actualizarcategoria.Text = "Actualiuzar";
-            actualizarcategoria.UseVisualStyleBackColor = true;
+            actualizarcategoria.UseVisualStyleBackColor = false;
             actualizarcategoria.Click += actualizarcategoria_Click;
             // 
             // numericUpDown1
             // 
+            numericUpDown1.BackColor = Color.FromArgb(224, 224, 224);
             numericUpDown1.Location = new Point(653, 93);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(120, 23);
@@ -66,6 +70,7 @@
             // 
             // Resultado
             // 
+            Resultado.BackColor = Color.FromArgb(224, 224, 224);
             Resultado.Location = new Point(653, 35);
             Resultado.Name = "Resultado";
             Resultado.Size = new Size(120, 23);
@@ -73,22 +78,27 @@
             // 
             // Cortador
             // 
+            Cortador.BackColor = Color.White;
+            Cortador.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Cortador.Location = new Point(734, 64);
             Cortador.Name = "Cortador";
             Cortador.Size = new Size(75, 23);
             Cortador.TabIndex = 4;
             Cortador.Text = "Cartar";
-            Cortador.UseVisualStyleBackColor = true;
+            Cortador.UseVisualStyleBackColor = false;
             Cortador.Click += Cortador_Click;
             // 
             // Buscardor
             // 
+            Buscardor.BackColor = Color.White;
+            Buscardor.BackgroundImageLayout = ImageLayout.None;
+            Buscardor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Buscardor.Location = new Point(653, 64);
             Buscardor.Name = "Buscardor";
             Buscardor.Size = new Size(75, 23);
             Buscardor.TabIndex = 5;
             Buscardor.Text = "Buacar";
-            Buscardor.UseVisualStyleBackColor = true;
+            Buscardor.UseVisualStyleBackColor = false;
             Buscardor.Click += Buscardor_Click;
             // 
             // label1
@@ -105,6 +115,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Highlight;
             ClientSize = new Size(857, 394);
             Controls.Add(label1);
             Controls.Add(Buscardor);

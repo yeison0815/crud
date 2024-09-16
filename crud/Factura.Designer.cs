@@ -43,6 +43,7 @@
             // 
             // dataGridView_Factura
             // 
+            dataGridView_Factura.BackgroundColor = Color.FromArgb(224, 224, 224);
             dataGridView_Factura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView_Factura.Location = new Point(12, 98);
             dataGridView_Factura.Name = "dataGridView_Factura";
@@ -71,16 +72,18 @@
             // 
             // Adicionar
             // 
+            Adicionar.BackColor = Color.White;
             Adicionar.Location = new Point(132, 61);
             Adicionar.Name = "Adicionar";
             Adicionar.Size = new Size(131, 31);
             Adicionar.TabIndex = 12;
             Adicionar.Text = "Adicionar";
-            Adicionar.UseVisualStyleBackColor = true;
+            Adicionar.UseVisualStyleBackColor = false;
             Adicionar.Click += Adicionar_Click_1;
             // 
             // TO_factura
             // 
+            TO_factura.BackColor = Color.FromArgb(224, 224, 224);
             TO_factura.Location = new Point(604, 307);
             TO_factura.Name = "TO_factura";
             TO_factura.Size = new Size(131, 23);
@@ -98,6 +101,7 @@
             // 
             // COS_factura
             // 
+            COS_factura.BackColor = Color.FromArgb(224, 224, 224);
             COS_factura.Location = new Point(108, 32);
             COS_factura.Name = "COS_factura";
             COS_factura.Size = new Size(93, 23);
@@ -105,16 +109,18 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.White;
             button1.Location = new Point(12, 61);
             button1.Name = "button1";
             button1.Size = new Size(114, 31);
             button1.TabIndex = 19;
             button1.Text = "editar";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // CAN_factura
             // 
+            CAN_factura.BackColor = Color.FromArgb(224, 224, 224);
             CAN_factura.Location = new Point(12, 32);
             CAN_factura.Name = "CAN_factura";
             CAN_factura.Size = new Size(90, 23);
@@ -122,18 +128,20 @@
             // 
             // button2
             // 
+            button2.BackColor = Color.White;
             button2.Location = new Point(635, 336);
             button2.Name = "button2";
             button2.Size = new Size(100, 31);
             button2.TabIndex = 21;
             button2.Text = "Calcular";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // Factura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Highlight;
             ClientSize = new Size(747, 374);
             Controls.Add(button2);
             Controls.Add(CAN_factura);
@@ -145,6 +153,7 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(dataGridView_Factura);
+            ForeColor = SystemColors.ControlText;
             Name = "Factura";
             Text = "Facturacs";
             Load += Factura_Load;

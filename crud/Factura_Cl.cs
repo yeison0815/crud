@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,19 @@ namespace Presentacion
             }
             return instancia;
         }
+        private conCategorias Factura = new conCategorias();
+        private bool ACTUALIZAR = false;
+
+        private void Categoria_load(object sender, EventArgs e)
+        {
+            ActualizarCategorias();
+        }
+
+        private void ActualizarCategorias()
+        {
+            conCategorias objeto = new conCategorias();
+            dataGridView_Factura.DataSource = objeto.ActualizarFRod();
+        }
         public Factura_Cl()
         {
             InitializeComponent();
@@ -32,6 +46,17 @@ namespace Presentacion
         private void Factura_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void actualizar_Click(object sender, EventArgs e)
+        {
+            //ACTUALIZAR
+            if (ACTUALIZAR == false)
+            {
+
+                MessageBox.Show("Se actualizo correctamente");
+                ActualizarCategorias();
+            }
         }
     }
 }
