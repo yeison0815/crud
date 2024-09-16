@@ -38,43 +38,52 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.Location = new Point(124, 122);
+            txtNombreUsuario.BackColor = Color.FromArgb(192, 192, 255);
+            txtNombreUsuario.Location = new Point(165, 164);
             txtNombreUsuario.Name = "txtNombreUsuario";
-            txtNombreUsuario.Size = new Size(261, 23);
+            txtNombreUsuario.Size = new Size(210, 23);
             txtNombreUsuario.TabIndex = 0;
             // 
             // txtContraseña
             // 
-            txtContraseña.Location = new Point(162, 197);
+            txtContraseña.BackColor = Color.FromArgb(192, 192, 255);
+            txtContraseña.Location = new Point(165, 195);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.PasswordChar = '*';
-            txtContraseña.Size = new Size(223, 23);
+            txtContraseña.Size = new Size(210, 23);
             txtContraseña.TabIndex = 1;
             // 
             // button1
             // 
-            button1.Location = new Point(175, 299);
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(117, 236);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(103, 28);
             button1.TabIndex = 2;
-            button1.Text = "registrarme";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Registrarme";
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(24, 299);
+            button2.BackColor = Color.White;
+            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(12, 410);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(103, 28);
             button2.TabIndex = 3;
             button2.Text = "Volver";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // panel1
             // 
@@ -99,7 +108,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Georgia", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(10, 114);
+            label1.Location = new Point(24, 156);
             label1.Name = "label1";
             label1.Size = new Size(118, 31);
             label1.TabIndex = 5;
@@ -109,28 +118,40 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Georgia", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(10, 187);
+            label2.Location = new Point(0, 187);
             label2.Name = "label2";
             label2.Size = new Size(159, 31);
             label2.TabIndex = 6;
             label2.Text = "Contraseña:";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(105, 53);
+            label3.ForeColor = SystemColors.WindowText;
+            label3.Location = new Point(103, 27);
             label3.Name = "label3";
             label3.Size = new Size(156, 38);
             label3.TabIndex = 7;
             label3.Text = "Registro";
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.RoyalBlue;
+            panel2.Controls.Add(label3);
+            panel2.ForeColor = SystemColors.HotTrack;
+            panel2.Location = new Point(0, -1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(398, 92);
+            panel2.TabIndex = 8;
+            // 
             // Registro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(128, 128, 255);
             ClientSize = new Size(800, 450);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -138,12 +159,15 @@
             Controls.Add(button1);
             Controls.Add(txtContraseña);
             Controls.Add(txtNombreUsuario);
+            Controls.Add(panel2);
             ForeColor = SystemColors.ControlText;
             Name = "Registro";
             Text = "Registro";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -159,5 +183,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Panel panel2;
     }
 }

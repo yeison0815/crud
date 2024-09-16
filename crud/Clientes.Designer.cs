@@ -41,24 +41,27 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.FromArgb(192, 192, 255);
             menuStrip1.Items.AddRange(new ToolStripItem[] { categoriaToolStripMenuItem, facturaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(852, 24);
+            menuStrip1.Size = new Size(852, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // categoriaToolStripMenuItem
             // 
+            categoriaToolStripMenuItem.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            categoriaToolStripMenuItem.Size = new Size(146, 20);
+            categoriaToolStripMenuItem.Size = new Size(188, 24);
             categoriaToolStripMenuItem.Text = "Categoria de productos ";
             categoriaToolStripMenuItem.Click += categoriaToolStripMenuItem_Click;
             // 
             // facturaToolStripMenuItem
             // 
+            facturaToolStripMenuItem.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            facturaToolStripMenuItem.Size = new Size(58, 20);
+            facturaToolStripMenuItem.Size = new Size(73, 24);
             facturaToolStripMenuItem.Text = "Factura";
             facturaToolStripMenuItem.Click += facturaToolStripMenuItem_Click;
             // 
@@ -66,7 +69,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
+            label1.ForeColor = SystemColors.WindowText;
             label1.Location = new Point(12, 72);
             label1.Name = "label1";
             label1.Size = new Size(732, 180);
@@ -77,7 +80,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(465, 144);
+            pictureBox1.Location = new Point(496, 144);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(344, 222);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -88,7 +91,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Georgia", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
+            label2.ForeColor = SystemColors.WindowText;
             label2.Location = new Point(12, 33);
             label2.Name = "label2";
             label2.Size = new Size(188, 29);

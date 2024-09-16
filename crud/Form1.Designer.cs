@@ -43,13 +43,13 @@
             label5 = new Label();
             txtStock = new TextBox();
             label4 = new Label();
-            txtPrecio = new TextBox();
             label3 = new Label();
             txtMarca = new TextBox();
             label2 = new Label();
             txtDesc = new TextBox();
             label1 = new Label();
             txtNombre = new TextBox();
+            txtPrecio = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -59,36 +59,42 @@
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.FromArgb(224, 224, 224);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(238, 0);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(608, 341);
+            dataGridView1.Size = new Size(596, 341);
             dataGridView1.TabIndex = 10;
             // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button2.BackColor = Color.White;
+            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button2.Location = new Point(238, 356);
             button2.Name = "button2";
             button2.Size = new Size(112, 35);
             button2.TabIndex = 12;
             button2.Text = "Editar";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // button3
             // 
             button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button3.BackColor = Color.White;
+            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
             button3.Location = new Point(381, 356);
             button3.Name = "button3";
             button3.Size = new Size(112, 35);
             button3.TabIndex = 13;
             button3.Text = "Borrar";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += button3_Click;
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.FromArgb(128, 128, 255);
             groupBox1.Controls.Add(groupBox2);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label5);
@@ -108,9 +114,11 @@
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             groupBox1.Text = "Producto";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // groupBox2
             // 
+            groupBox2.BackColor = Color.FromArgb(128, 128, 255);
             groupBox2.Controls.Add(button5);
             groupBox2.Controls.Add(button4);
             groupBox2.Controls.Add(label7);
@@ -127,22 +135,26 @@
             // 
             // button5
             // 
+            button5.BackColor = Color.White;
+            button5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.Location = new Point(108, 43);
             button5.Name = "button5";
             button5.Size = new Size(95, 31);
             button5.TabIndex = 30;
             button5.Text = "Nombre";
-            button5.UseVisualStyleBackColor = true;
+            button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
             // button4
             // 
+            button4.BackColor = Color.White;
+            button4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.Location = new Point(108, 75);
             button4.Name = "button4";
             button4.Size = new Size(95, 31);
             button4.TabIndex = 29;
             button4.Text = "Contar";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
             // label7
@@ -156,11 +168,11 @@
             // 
             // numericUpDown1
             // 
+            numericUpDown1.BackColor = Color.FromArgb(192, 192, 255);
             numericUpDown1.Location = new Point(17, 49);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(75, 23);
             numericUpDown1.TabIndex = 27;
-
             // 
             // label6
             // 
@@ -173,6 +185,7 @@
             // 
             // txtResult
             // 
+            txtResult.BackColor = Color.FromArgb(192, 192, 255);
             txtResult.Location = new Point(17, 112);
             txtResult.Name = "txtResult";
             txtResult.Size = new Size(186, 23);
@@ -180,12 +193,14 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.White;
+            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(12, 297);
             button1.Name = "button1";
             button1.Size = new Size(194, 33);
             button1.TabIndex = 22;
             button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // label5
@@ -199,6 +214,7 @@
             // 
             // txtStock
             // 
+            txtStock.BackColor = Color.FromArgb(224, 224, 224);
             txtStock.Location = new Point(12, 259);
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(194, 23);
@@ -213,13 +229,6 @@
             label4.TabIndex = 19;
             label4.Text = "Precio:";
             // 
-            // txtPrecio
-            // 
-            txtPrecio.Location = new Point(12, 205);
-            txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(194, 23);
-            txtPrecio.TabIndex = 18;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -231,6 +240,7 @@
             // 
             // txtMarca
             // 
+            txtMarca.BackColor = Color.FromArgb(192, 192, 255);
             txtMarca.Location = new Point(12, 149);
             txtMarca.Name = "txtMarca";
             txtMarca.Size = new Size(194, 23);
@@ -247,6 +257,7 @@
             // 
             // txtDesc
             // 
+            txtDesc.BackColor = Color.FromArgb(192, 192, 255);
             txtDesc.Location = new Point(12, 96);
             txtDesc.Name = "txtDesc";
             txtDesc.Size = new Size(194, 23);
@@ -263,15 +274,25 @@
             // 
             // txtNombre
             // 
+            txtNombre.BackColor = Color.FromArgb(192, 192, 255);
             txtNombre.Location = new Point(12, 46);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(194, 23);
             txtNombre.TabIndex = 12;
             // 
+            // txtPrecio
+            // 
+            txtPrecio.BackColor = Color.FromArgb(192, 192, 255);
+            txtPrecio.Location = new Point(12, 205);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(194, 23);
+            txtPrecio.TabIndex = 18;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(846, 500);
             Controls.Add(groupBox1);
             Controls.Add(button3);
@@ -298,7 +319,6 @@
         private Label label5;
         private TextBox txtStock;
         private Label label4;
-        private TextBox txtPrecio;
         private Label label3;
         private TextBox txtMarca;
         private Label label2;
@@ -312,5 +332,6 @@
         private NumericUpDown numericUpDown1;
         private Label label6;
         private TextBox txtResult;
+        private TextBox txtPrecio;
     }
 }

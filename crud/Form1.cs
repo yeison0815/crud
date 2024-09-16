@@ -121,6 +121,9 @@ namespace crud
             txtResult.Text = Convert.ToString(Producto.Contar());
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -45,5 +45,10 @@ namespace Presentacion
             frm.Show();
             frm.BringToFront();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

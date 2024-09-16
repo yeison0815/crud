@@ -33,9 +33,9 @@
             facturaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
             panel1 = new Panel();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -43,24 +43,27 @@
             // 
             // productosToolStripMenuItem
             // 
+            productosToolStripMenuItem.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            productosToolStripMenuItem.Size = new Size(76, 20);
+            productosToolStripMenuItem.Size = new Size(96, 24);
             productosToolStripMenuItem.Text = "Productos ";
             productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
             // 
             // facturaToolStripMenuItem
             // 
+            facturaToolStripMenuItem.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             facturaToolStripMenuItem.Name = "facturaToolStripMenuItem";
-            facturaToolStripMenuItem.Size = new Size(58, 20);
+            facturaToolStripMenuItem.Size = new Size(73, 24);
             facturaToolStripMenuItem.Text = "Factura";
             facturaToolStripMenuItem.Click += facturaToolStripMenuItem_Click;
             // 
             // menuStrip1
             // 
+            menuStrip1.BackColor = Color.FromArgb(192, 192, 255);
             menuStrip1.Items.AddRange(new ToolStripItem[] { productosToolStripMenuItem, facturaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(907, 24);
+            menuStrip1.Size = new Size(907, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -70,10 +73,32 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(0, 27);
+            panel1.Location = new Point(0, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(907, 390);
+            panel1.Size = new Size(907, 405);
             panel1.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(12, 25);
+            label2.Name = "label2";
+            label2.Size = new Size(336, 30);
+            label2.TabIndex = 2;
+            label2.Text = "Bienvenido a Usuario del sistema";
+            label2.Click += label2_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(534, 25);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(361, 240);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -86,34 +111,13 @@
             label1.TabIndex = 0;
             label1.Text = "\r\nEntra a producsto para poder insertar, editar y eliminar \r\nCrea ayudar a su cliente entra a Factura para que sea mas facil \r\n\r\n\r\n";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(534, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(361, 240);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(12, 3);
-            label2.Name = "label2";
-            label2.Size = new Size(336, 30);
-            label2.TabIndex = 2;
-            label2.Text = "Bienvenido a Usuario del sistema";
-            // 
             // UsuariosPRIN
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(907, 417);
-            Controls.Add(panel1);
             Controls.Add(menuStrip1);
+            Controls.Add(panel1);
             MainMenuStrip = menuStrip1;
             Name = "UsuariosPRIN";
             Text = "UsuariosPRIN";

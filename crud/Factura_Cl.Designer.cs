@@ -44,19 +44,21 @@
             // 
             // actualizar
             // 
+            actualizar.BackColor = Color.White;
+            actualizar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             actualizar.Location = new Point(12, 360);
             actualizar.Name = "actualizar";
             actualizar.Size = new Size(104, 26);
             actualizar.TabIndex = 1;
             actualizar.Text = "Actualizar";
-            actualizar.UseVisualStyleBackColor = true;
+            actualizar.UseVisualStyleBackColor = false;
             actualizar.Click += actualizar_Click;
             // 
             // Factura_Cl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Highlight;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(800, 450);
             Controls.Add(actualizar);
             Controls.Add(dataGridView_Factura);
