@@ -7,6 +7,18 @@ namespace Presentacion
 {
     public partial class Usuarios : Form
     {
+        private static Usuarios volver = null;
+        public static Usuarios Volver_unico()
+        {
+
+            if (volver == null)
+            {
+                volver = new Usuarios();
+
+                return volver;
+            }
+            return volver;
+        }
         public Usuarios()
         {
             InitializeComponent();
@@ -117,7 +129,6 @@ namespace Presentacion
         {
 
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 

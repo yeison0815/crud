@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using crud;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,7 +33,7 @@ namespace Presentacion
                 string nombreUsuario = txtNombreUsuario.Text;
                 string contraseña = txtContraseña.Text;
 
-                // Hashear la contraseña
+
                 string contraseñaHasheada = Hashing.HashearContraseña(contraseña);
 
                 try
@@ -44,16 +45,15 @@ namespace Presentacion
 
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
-                            // Asignar los valores para la consulta SQL
+
                             command.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
                             command.Parameters.AddWithValue("@Contraseña", contraseñaHasheada);
 
-                            // Asignar automáticamente el rol "usuario"
+
                             command.Parameters.AddWithValue("@Rol", "usuario");
 
                             int result = command.ExecuteNonQuery();
 
-                            // Verificar si se insertó correctamente
                             if (result > 0)
                             {
                                 MessageBox.Show("Usuario registrado exitosamente.");
@@ -74,7 +74,10 @@ namespace Presentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Usuarios frm = Usuarios.Volver_unico();
+            frm.MdiParent = null;
+            frm.Show();
+            frm.BringToFront();
         }
 
         private void label2_Click(object sender, EventArgs e)
