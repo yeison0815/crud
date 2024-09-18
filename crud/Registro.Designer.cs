@@ -138,7 +138,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.RoyalBlue;
+            panel2.BackColor = Color.White;
             panel2.Controls.Add(label3);
             panel2.ForeColor = SystemColors.HotTrack;
             panel2.Location = new Point(0, -1);
@@ -150,7 +150,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(128, 128, 255);
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(label1);

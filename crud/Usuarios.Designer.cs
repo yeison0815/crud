@@ -67,7 +67,7 @@
             // 
             button1.BackColor = Color.White;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(543, 240);
+            button1.Location = new Point(626, 304);
             button1.Name = "button1";
             button1.Size = new Size(118, 29);
             button1.TabIndex = 5;
@@ -79,7 +79,7 @@
             // 
             button2.BackColor = Color.White;
             button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(433, 408);
+            button2.Location = new Point(434, 304);
             button2.Name = "button2";
             button2.Size = new Size(118, 29);
             button2.TabIndex = 7;
@@ -110,7 +110,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(128, 128, 255);
+            label2.BackColor = Color.White;
             label2.Font = new Font("Georgia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(422, 191);
             label2.Name = "label2";
@@ -131,7 +131,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(128, 128, 255);
+            panel2.BackColor = Color.White;
             panel2.Controls.Add(panel3);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(button1);
@@ -144,7 +144,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.RoyalBlue;
+            panel3.BackColor = Color.White;
             panel3.Controls.Add(label3);
             panel3.Location = new Point(379, 1);
             panel3.Name = "panel3";
